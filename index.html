@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ema · Travel &amp; Expense Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F5F1;
+    --surface:#FFFFFF;
+    --surface-2:#FAFAF8;
+    --ink:#20242F;
+    --ink-2:#3A3F5C;
+    --muted:#6C7291;
+    --line:#E4E4E0;
+    --line-2:#EDEDEA;
+    --primary:#3D7A46;
+    --primary-rgb:61,122,70;
+    --primary-deep:#2E5E37;
+    --primary-tint:#E7F2E9;
+    --agent:#4CAF61;
+    --agent-rgb:76,175,97;
+    --agent-tint:#E7F7EC;
+    --agent-glow:rgba(76,175,97,.35);
+    --success:#12A366;
+    --success-tint:#E6F7EF;
+    --warn:#E08600;
+    --warn-tint:#FEF2DD;
+    --warn-line:#F7D9A6;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+    --shadow-sm:0 1px 2px rgba(16,19,42,.05),0 1px 3px rgba(16,19,42,.04);
+    --shadow-md:0 4px 12px -6px rgba(16,19,42,.10),0 1px 3px rgba(16,19,42,.05);
+    --shadow-lg:0 12px 32px -12px rgba(32,36,47,.16),0 4px 10px -4px rgba(16,19,42,.10);
+    --radius:10px;
+  }
+  /* Per-persona themes — tab 1 (Employee/green, brand default), tab 2 (Manager/indigo), tab 3 (Finance/rose).
+     Distinct accent hues make it unmistakable which tab/persona you're in as you switch. */
+  body.theme-manager{
+    --primary:#4F46E5; --primary-rgb:79,70,229; --primary-deep:#3A31C4; --primary-tint:#EEF0FF;
+    --agent:#6D5DF6; --agent-rgb:109,93,246; --agent-tint:#EFEBFF; --agent-glow:rgba(109,93,246,.35);
+  }
+  body.theme-finance{
+    --primary:#BE185D; --primary-rgb:190,24,93; --primary-deep:#9D174D; --primary-tint:#FCE7F3;
+    --agent:#EC4899; --agent-rgb:236,72,153; --agent-tint:#FDF2F8; --agent-glow:rgba(236,72,153,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    transition:background-color .25s ease;
+    min-height:100vh;
+  }
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:8px}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:saturate(180%) blur(10px);
+    background:rgba(255,255,255,.82);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1080px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;gap:20px;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand-logo{height:24px;width:auto;flex:0 0 auto;display:block}
+  .brand-text{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+  .brand-text span{font-size:11.5px;color:var(--muted);font-weight:500}
+
+  .roles{position:relative;display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:4px;gap:2px}
+  .role-btn{
+    display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:9px;
+    font-size:13.5px;font-weight:600;color:var(--ink-2);transition:all .18s ease;white-space:nowrap;
+  }
+  .role-btn .dot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .18s}
+  .role-btn:hover{color:var(--ink)}
+  .role-btn.active{background:var(--surface);color:var(--primary-deep);box-shadow:var(--shadow-sm)}
+  .role-btn.active .dot{background:var(--primary)}
+
+  /* ---------- Onboarding tooltips (auto-shown, dismissible, shared style) ---------- */
+  .tip-bubble{
+    position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+    background:var(--ink);color:#fff;font-size:12.5px;font-weight:500;line-height:1.5;
+    padding:11px 30px 11px 14px;border-radius:10px;width:max-content;max-width:300px;text-align:left;
+    box-shadow:var(--shadow-md);z-index:80;animation:tipIn .25s ease;
+  }
+  .tip-bubble b{color:#fff;font-weight:700}
+  .tip-bubble::before{
+    content:'';position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+    border:6px solid transparent;border-bottom-color:var(--ink);
+  }
+  .tip-bubble.hidden{display:none}
+  .tip-close{
+    position:absolute;top:6px;right:6px;width:19px;height:19px;border-radius:6px;
+    display:grid;place-items:center;color:rgba(255,255,255,.65);font-size:13px;line-height:1;
+    transition:all .15s ease;
+  }
+  .tip-close:hover{background:rgba(255,255,255,.16);color:#fff}
+  @keyframes tipIn{from{opacity:0;transform:translateX(-50%) translateY(-4px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+  .restart{
+    display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted);
+    padding:7px 11px;border-radius:9px;border:1px solid var(--line);background:var(--surface);
+  }
+  .flip-x{transform:scaleX(-1)}
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);
+    padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+    flex:0 0 auto;margin-right:10px;white-space:nowrap;box-shadow:var(--shadow-sm);
+  }
+  .back-link svg{width:14px;height:14px}
+  .back-link:hover:not(:disabled){color:var(--primary-deep);border-color:#D2D4E0}
+  .back-link:disabled{opacity:.4;cursor:not-allowed;pointer-events:none;box-shadow:none}
+  .roi-arrow{width:13px;height:13px;flex:0 0 auto;color:var(--muted)}
+  .restart:hover{color:var(--ink);border-color:#D9DBEA}
+  .restart svg{width:13px;height:13px}
+
+  /* ---------- Pipeline ribbon ---------- */
+  .pipeline{max-width:1080px;margin:0 auto;padding:14px 24px 0;display:flex;align-items:center}
+  .pipeline-inner{
+    position:relative;flex:1;min-width:0;display:flex;align-items:center;gap:6px;background:var(--surface);
+    border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow-sm);
+  }
+  .stage{display:flex;align-items:center;gap:9px;padding:6px 10px;border-radius:10px;flex:0 0 auto}
+  .stage .ic{
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+    background:var(--line-2);color:var(--muted);transition:all .3s ease;
+  }
+  .stage .ic svg{width:15px;height:15px}
+  .stage .lab{display:flex;flex-direction:column;line-height:1.1}
+  .stage .lab b{font-size:12.5px;font-weight:650}
+  .stage .lab span{font-size:10px;color:var(--muted);font-weight:500}
+  .stage.active .ic{background:var(--primary);color:#fff;box-shadow:0 6px 14px -5px rgba(var(--primary-rgb),.5)}
+  .stage.active .lab b{color:var(--primary-deep)}
+  .stage.done .ic{background:var(--success-tint);color:var(--success)}
+  .stage.agentstage.active .ic{background:var(--agent);box-shadow:0 6px 16px -4px var(--agent-glow)}
+  .stage.clickable{cursor:pointer;transition:all .15s ease;border:1px solid transparent}
+  .stage.clickable:not(.active){border-color:var(--line)}
+  .stage.clickable:hover{background:var(--surface-2);border-color:#D2D4E0}
+  .stage.clickable:hover .lab b{color:var(--primary-deep)}
+  .stage.clickable:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+  .stage-arrow-wrap{position:relative;flex:1 1 auto;min-width:12px;display:flex;align-items:center}
+  .stage-arrow{flex:1 1 auto;height:2px;border-radius:2px;background:var(--line-2)}
+  .stage-arrow.flow{background:linear-gradient(90deg,var(--primary),var(--agent))}
+  .handoff-mid{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    background:var(--surface);padding:0 8px;font-size:10px;font-weight:650;color:var(--agent);
+    display:flex;align-items:center;gap:4px;white-space:nowrap;
+  }
+  .handoff-mid svg{width:10px;height:10px;flex:0 0 auto}
+
+  /* ---------- Stage / canvas ---------- */
+  .stagewrap{max-width:1080px;margin:0 auto;padding:22px 24px 80px}
+  .screen{animation:rise .45s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .badge-trigger{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:650;
+    padding:7px 13px;border-radius:22px;margin-bottom:16px;
+  }
+  .badge-agent{
+    background:var(--agent-tint);color:var(--primary-deep);
+    box-shadow:0 0 0 4px rgba(var(--agent-rgb),.10);
+  }
+  .badge-trigger .emo{font-size:14px;line-height:1}
+
+  h2.screen-title{font-size:22px;font-weight:750;letter-spacing:-.02em;margin:2px 0 4px}
+  p.screen-sub{color:var(--muted);font-size:14px;margin:0 0 22px;max-width:640px;line-height:1.5}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-md)}
+
+  /* ---------- Chat (screen 1) ---------- */
+  .chat-label{
+    display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:650;color:var(--muted);
+    max-width:720px;margin:0 auto 10px;
+  }
+  .chat-label svg{width:15px;height:15px;color:var(--agent)}
+  .chat-shell{max-width:720px;margin:0 auto}
+  .chat-window{padding:20px;min-height:230px;display:flex;flex-direction:column;gap:14px}
+  .chat-empty{
+    margin:auto;text-align:center;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 0;
+  }
+  .chat-empty .halo{
+    width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--primary),var(--agent));color:#fff;box-shadow:var(--shadow-lg);
+  }
+  .chat-empty .halo svg{width:26px;height:26px}
+  .chat-empty b{color:var(--ink);font-size:15px;font-weight:650}
+  .chat-empty p{margin:0;font-size:13px;max-width:280px}
+
+  .bubble{display:flex;gap:11px;align-items:flex-start;animation:rise .3s ease both}
+  .bubble.user{flex-direction:row-reverse}
+  .avatar{width:30px;height:30px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;font-size:14px}
+  .avatar.agent{background:var(--agent-tint);color:var(--agent)}
+  .avatar.agent svg{width:16px;height:16px}
+  .avatar.user{background:var(--primary);color:#fff;font-weight:650;font-size:12px}
+  .bubble-body{padding:11px 14px;border-radius:13px;font-size:14px;line-height:1.5;max-width:78%}
+  .bubble.agent .bubble-body{background:var(--agent-tint);color:#33306A;border-top-left-radius:4px}
+  .bubble.user .bubble-body{background:var(--primary);color:#fff;border-top-right-radius:4px}
+
+  .thinking{display:flex;gap:5px;padding:4px 2px;align-items:center}
+  .thinking i{width:7px;height:7px;border-radius:50%;background:var(--agent);opacity:.5;animation:blink 1.2s infinite}
+  .thinking i:nth-child(2){animation-delay:.2s}
+  .thinking i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+  .composer{border-top:1px solid var(--line-2);padding:14px 16px;display:flex;flex-direction:column;gap:11px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-size:12.5px;font-weight:550;color:var(--primary-deep);background:var(--primary-tint);
+    border:1px solid #CFE6D2;padding:8px 13px;border-radius:20px;transition:all .16s;text-align:left;
+  }
+  .chip:hover{background:#DCEFDF;transform:translateY(-1px)}
+  .composer-row{display:flex;gap:10px;align-items:center}
+  .composer-row input{
+    flex:1;padding:12px 15px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);
+    font-size:14px;font-family:inherit;color:var(--ink);
+  }
+  .composer-row input:focus{outline:none;border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px var(--primary-tint)}
+  .send-btn{
+    width:44px;height:44px;border-radius:12px;background:var(--primary);color:#fff;display:grid;place-items:center;flex:0 0 auto;
+    transition:background .16s;
+  }
+  .send-btn:hover{background:var(--primary-deep)}
+  .send-btn svg{width:18px;height:18px}
+
+  /* ---------- Itinerary (screen 2) ---------- */
+  .itin-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto}
+  .opt{padding:18px 18px 16px;position:relative;transition:box-shadow .2s,border-color .2s}
+  .opt.recommended{border-color:#BFE0C4;box-shadow:0 14px 34px -16px rgba(61,122,70,.35)}
+  .opt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .opt-tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;border-radius:7px}
+  .opt-tag.rec{background:var(--primary);color:#fff}
+  .opt-tag.alt{background:var(--line-2);color:var(--muted)}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:650;padding:4px 10px;border-radius:20px}
+  .pill.ok{background:var(--success-tint);color:var(--success)}
+  .pill.flag{background:var(--warn-tint);color:var(--warn)}
+  .pill svg{width:12px;height:12px}
+  .leg{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line-2)}
+  .leg:first-of-type{border-top:none}
+  .leg .lic{width:30px;height:30px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);flex:0 0 auto}
+  .leg .lic svg{width:15px;height:15px}
+  .leg .ldesc{flex:1;min-width:0}
+  .leg .ldesc b{font-size:13.5px;font-weight:600;display:block}
+  .leg .ldesc span{font-size:12px;color:var(--muted)}
+  .leg .lprice{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink)}
+  .opt-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-2)}
+  .opt-total{font-size:13px;color:var(--muted)}
+  .opt-total b{font-family:var(--mono);font-size:18px;color:var(--ink);font-weight:700;margin-left:6px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:650;
+    padding:11px 20px;border-radius:12px;transition:all .16s;
+  }
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--primary);color:#fff;box-shadow:0 8px 18px -8px rgba(var(--primary-rgb),.5)}
+  .btn-primary:hover{background:var(--primary-deep)}
+  .btn-ghost{background:var(--surface);color:var(--ink-2);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:#D2D4E4;color:var(--ink)}
+  .btn-agent{background:var(--agent);color:#fff;box-shadow:0 8px 20px -6px var(--agent-glow)}
+  .btn-agent:hover{filter:brightness(1.05)}
+  .btn-block{width:100%}
+
+  /* ---------- Trip watch (screen 3) ---------- */
+  .watch{max-width:720px;margin:0 auto}
+  .watch-card{padding:26px;display:flex;align-items:center;gap:18px}
+  .radar{width:52px;height:52px;border-radius:50%;flex:0 0 auto;position:relative;display:grid;place-items:center;background:var(--primary-tint);color:var(--primary)}
+  .radar svg{width:24px;height:24px;position:relative;z-index:2}
+  .radar::before,.radar::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--primary);opacity:0;animation:ping 2.4s ease-out infinite}
+  .radar::after{animation-delay:1.2s}
+  @keyframes ping{0%{transform:scale(.7);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+  .watch-card .wtext b{font-size:16px;font-weight:700;display:block;margin-bottom:2px}
+  .watch-card .wtext span{font-size:13.5px;color:var(--muted)}
+  .watch-steps{margin-top:16px;display:flex;flex-direction:column;gap:0}
+  .wstep{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted);padding:8px 4px}
+  .wstep .wtick{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;display:grid;place-items:center}
+  .wstep.done{color:var(--ink-2)}
+  .wstep.done .wtick{border-color:var(--success);background:var(--success);color:#fff}
+  .wstep.done .wtick svg{width:11px;height:11px}
+  .wstep.pending .wtick{border-color:var(--agent);animation:pulse-b 1.4s infinite}
+  @keyframes pulse-b{0%,100%{box-shadow:0 0 0 0 var(--agent-glow)}50%{box-shadow:0 0 0 5px rgba(var(--agent-rgb),0)}}
+
+  .notif{
+    margin-top:20px;padding:20px;border-radius:var(--radius);
+    background:linear-gradient(180deg,#F5FAF6,#FFFFFF);
+    border:1.5px solid #CFE6D2;box-shadow:var(--shadow-lg);
+    display:flex;gap:16px;align-items:flex-start;
+    animation:notif-in .6s cubic-bezier(.16,.9,.3,1) both;
+  }
+  @keyframes notif-in{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+  .notif .nic{width:44px;height:44px;border-radius:12px;flex:0 0 auto;background:var(--agent);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -6px var(--agent-glow)}
+  .notif .nic svg{width:22px;height:22px}
+  .notif .nbody{flex:1}
+  .notif .ntitle{font-size:15px;font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:8px}
+  .notif .ntitle .live{font-size:10px;font-weight:700;color:var(--agent);background:var(--agent-tint);padding:2px 7px;border-radius:20px;letter-spacing:.03em}
+  .notif .nsub{font-size:13.5px;color:var(--ink-2);line-height:1.5;margin-bottom:14px}
+  .notif .nsub b{color:var(--ink)}
+
+  /* ---------- Report (screen 4) ---------- */
+  .report{max-width:900px;margin:0 auto}
+  .report-head{padding:20px 22px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line-2)}
+  .report-head .rh-l h3{margin:0 0 4px;font-size:18px;font-weight:750;letter-spacing:-.01em}
+  .report-head .rh-l .meta{font-size:13px;color:var(--muted)}
+  .assembled{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:650;color:var(--agent);background:var(--agent-tint);padding:6px 11px;border-radius:20px;margin-top:9px}
+  .assembled svg{width:13px;height:13px}
+  .report-head .rh-r{text-align:right}
+  .report-head .rh-r .tot-lab{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .report-head .rh-r .tot-val{font-family:var(--mono);font-size:26px;font-weight:750;letter-spacing:-.01em}
+  .report-head .rh-r .tot-note{font-size:12px;color:var(--success);font-weight:600;margin-top:2px}
+
+  .tbl{width:100%;border-collapse:collapse;font-size:13px}
+  .tbl thead th{
+    text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:650;
+    padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-2);
+  }
+  .tbl thead th.num{text-align:right}
+  .tbl tbody td{padding:12px 14px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+  .tbl tbody tr:last-child td{border-bottom:none}
+  .tbl .m-name{font-weight:600;color:var(--ink);display:flex;align-items:center;gap:9px}
+  .tbl .rcpt{width:26px;height:26px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);flex:0 0 auto}
+  .tbl .rcpt svg{width:13px;height:13px}
+  .tbl .m-sub{font-size:11.5px;color:var(--muted);font-weight:400}
+  .tbl .amt{font-family:var(--mono);text-align:right;font-weight:600;white-space:nowrap}
+  .gl{font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+  .src{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:7px;white-space:nowrap}
+  .src svg{width:11px;height:11px}
+  .src.corp{background:var(--primary-tint);color:var(--primary-deep)}
+  .src.email{background:#E7F1FF;color:#2563C9}
+  .src.snap{background:#EAF7EE;color:#178A4E}
+  .cat-pill{font-size:11.5px;color:var(--ink-2)}
+  .row-ok .stat{color:var(--success)}
+  .stat{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600}
+  .stat svg{width:13px;height:13px}
+  tr.row-flag{background:var(--warn-tint)}
+  tr.row-flag td{border-bottom-color:var(--warn-line)}
+  tr.row-flag .stat{color:var(--warn)}
+
+  .exception-panel{margin:0;border-top:1px dashed var(--warn-line);background:linear-gradient(180deg,#FEFAF2,#fff);padding:16px 18px;display:flex;gap:13px;align-items:flex-start}
+  .exception-panel.hide{display:none}
+  .exception-panel .eic{width:34px;height:34px;border-radius:10px;flex:0 0 auto;background:var(--warn-tint);color:var(--warn);display:grid;place-items:center}
+  .exception-panel .eic svg{width:18px;height:18px}
+  .exception-panel .ebody{flex:1}
+  .exception-panel .etitle{font-size:13px;font-weight:700;margin-bottom:3px}
+  .exception-panel .eq{font-size:13px;color:var(--ink-2);line-height:1.5;margin-bottom:12px}
+  .exception-panel .eq b{color:var(--ink)}
+  .eactions{display:flex;flex-wrap:wrap;gap:8px}
+  .ebtn{font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink-2);transition:all .15s}
+  .ebtn:hover{border-color:#D2D4E4;color:var(--ink)}
+  .ebtn.primary{background:var(--warn);color:#fff;border-color:var(--warn)}
+  .ebtn.primary:hover{filter:brightness(1.04)}
+
+  .resolved-note{margin:0;padding:14px 18px;background:var(--success-tint);border-top:1px solid #C9EED9;display:none;gap:10px;align-items:center;font-size:13px;color:#0F7A4C;font-weight:550}
+  .resolved-note.show{display:flex}
+  .resolved-note svg{width:16px;height:16px;flex:0 0 auto}
+
+  .report-foot{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--line-2);flex-wrap:wrap}
+  .report-foot .rf-note{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .report-foot .rf-note svg{width:14px;height:14px;color:var(--agent)}
+
+  /* ---------- Snap-a-receipt (out-of-pocket capture) ---------- */
+  .snap-card{max-width:900px;margin:16px auto 0;padding:18px 20px}
+  .snap-idle{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .snap-idle .si-ic{width:36px;height:36px;border-radius:10px;background:var(--agent-tint);color:var(--agent);display:grid;place-items:center;flex:0 0 auto}
+  .snap-idle .si-ic svg{width:18px;height:18px}
+  .snap-idle .si-txt{flex:1;min-width:220px}
+  .snap-idle .si-txt b{font-size:13.5px;font-weight:650;display:block}
+  .snap-idle .si-txt span{font-size:12.5px;color:var(--muted)}
+  .snap-flow{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+  .snap-thumb{width:110px;border-radius:10px;border:1px solid var(--line);box-shadow:var(--shadow-sm);flex:0 0 auto}
+  .snap-status{flex:1;min-width:220px;padding-top:4px}
+  .snap-status .ss-title{font-size:13.5px;font-weight:650;margin-bottom:4px}
+  .snap-status .ss-sub{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+  .snap-fields{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+  .snap-field{display:flex;justify-content:space-between;font-size:12.5px;padding:7px 10px;background:var(--surface-2);border-radius:8px}
+  .snap-field span:first-child{color:var(--muted)}
+  .snap-field span:last-child{font-weight:600;color:var(--ink)}
+  .snap-done{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--success);font-weight:600}
+  .snap-done svg{width:16px;height:16px;flex:0 0 auto}
+
+  /* ---------- Expense Hub (Expense Agent digest) ---------- */
+  .exp-hub{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:0 auto}
+  .exp-section{padding:18px 20px}
+  .exp-section.muted{background:var(--surface-2)}
+  .exp-sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .exp-sec-head h4{margin:0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+  .exp-count{font-size:11px;font-weight:700;color:var(--muted);background:var(--line-2);padding:2px 9px;border-radius:20px}
+  .exp-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-top:1px solid var(--line-2)}
+  .exp-row:first-of-type{border-top:none;padding-top:8px}
+  .exp-row .eic{width:38px;height:38px;border-radius:10px;background:var(--agent-tint);color:var(--agent);display:grid;place-items:center;flex:0 0 auto}
+  .exp-row .eic svg{width:19px;height:19px}
+  .exp-row.done .eic{background:var(--success-tint);color:var(--success)}
+  .exp-row .ebody{flex:1;min-width:0}
+  .exp-row .ebody b{font-size:14px;font-weight:650;display:block}
+  .exp-row .ebody .emeta{font-size:12px;color:var(--muted);margin-top:1px}
+  .exp-row .eline{font-size:12.5px;color:var(--ink-2);margin-top:7px;line-height:1.4;display:flex;align-items:flex-start;gap:6px}
+  .exp-row .eline svg{width:12px;height:12px;color:var(--agent);flex:0 0 auto;margin-top:2px}
+  .exp-row .eamt{text-align:right;flex:0 0 auto}
+  .exp-row .eamt b{font-family:var(--mono);font-size:15px;font-weight:700;display:block}
+  .exp-row .eamt span{font-size:11px;color:var(--muted)}
+  .exp-row .eaction{margin-top:11px}
+
+  /* ---------- Manager (screen 5) ---------- */
+  .approval{max-width:640px;margin:0 auto}
+  .appr-card{padding:0;overflow:hidden}
+  .appr-top{padding:18px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line-2);background:var(--surface-2)}
+  .appr-top .aic{width:36px;height:36px;border-radius:10px;background:var(--agent-tint);color:var(--agent);display:grid;place-items:center;flex:0 0 auto}
+  .appr-top .aic svg{width:19px;height:19px}
+  .appr-top b{font-size:14px;font-weight:700;display:block}
+  .appr-top span{font-size:12px;color:var(--muted)}
+  .appr-body{padding:20px}
+  .appr-summary{font-size:15px;line-height:1.6;color:var(--ink-2)}
+  .appr-summary b{color:var(--ink);font-weight:700}
+  .appr-stats{display:flex;gap:10px;margin:16px 0 4px;flex-wrap:wrap}
+  .astat{flex:1;min-width:130px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .astat .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600;margin-bottom:4px}
+  .astat .v{font-size:16px;font-weight:700;font-family:var(--mono)}
+  .astat.good .v{color:var(--success)}
+  .astat.warnv .v{color:var(--warn)}
+  .exc-detail{margin-top:16px;border:1px solid var(--warn-line);background:var(--warn-tint);border-radius:12px;padding:14px 16px}
+  .exc-detail .ed-t{font-size:12px;font-weight:700;color:var(--warn);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .exc-detail .ed-t svg{width:13px;height:13px}
+  .exc-detail .ed-b{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+  .exc-detail .ed-b b{color:var(--ink)}
+  .ctx-line{margin-top:14px;display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-2);background:var(--primary-tint);border-radius:10px;padding:11px 13px}
+  .ctx-line svg{width:16px;height:16px;color:var(--primary);flex:0 0 auto}
+  .ctx-line b{color:var(--primary-deep)}
+  .appr-actions{display:flex;gap:10px;margin-top:20px}
+  .appr-foot-note{font-size:12px;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:7px;line-height:1.4}
+  .appr-foot-note svg{width:14px;height:14px;flex:0 0 auto;color:var(--muted)}
+
+  /* ---------- Finance (screen 6) ---------- */
+  .finance{max-width:920px;margin:0 auto}
+  .fin-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+  .fin-panel{padding:18px 20px}
+  .fin-panel h4{margin:0 0 3px;font-size:14px;font-weight:700}
+  .fin-panel .ph-sub{font-size:12px;color:var(--muted);margin:0 0 16px}
+  .barrow{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+  .barrow .blab{width:118px;font-size:12.5px;color:var(--ink-2);font-weight:550;flex:0 0 auto}
+  .bartrack{flex:1;height:9px;background:var(--line-2);border-radius:6px;overflow:hidden}
+  .barfill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--primary),var(--agent));animation:grow 1s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes grow{from{width:0}}
+  .barrow .bval{width:64px;text-align:right;font-family:var(--mono);font-size:12.5px;font-weight:600;flex:0 0 auto}
+  .fin-total{display:flex;align-items:center;justify-content:space-between;margin-top:4px;padding-top:14px;border-top:1px solid var(--line-2)}
+  .fin-total span{font-size:13px;color:var(--muted);font-weight:600}
+  .fin-total b{font-family:var(--mono);font-size:20px;font-weight:750}
+
+  .trip-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-2)}
+  .trip-row:last-child{border-bottom:none}
+  .trip-row .tic{width:34px;height:34px;border-radius:9px;background:var(--primary-tint);color:var(--primary);display:grid;place-items:center;flex:0 0 auto}
+  .trip-row .tic svg{width:17px;height:17px}
+  .trip-row .tinfo{flex:1;min-width:0}
+  .trip-row .tinfo b{font-size:13.5px;font-weight:600;display:block}
+  .trip-row .tinfo span{font-size:11.5px;color:var(--muted)}
+  .status-pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--success-tint);color:var(--success);display:inline-flex;align-items:center;gap:5px}
+  .status-pill svg{width:11px;height:11px}
+  .status-pill.warn{background:var(--warn-tint);color:var(--warn)}
+  .clean-checks{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .ccheck{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-2)}
+  .ccheck .cc-ic{width:18px;height:18px;border-radius:50%;background:var(--success-tint);color:var(--success);display:grid;place-items:center;flex:0 0 auto}
+  .ccheck .cc-ic svg{width:11px;height:11px}
+  .fin-caption{margin:16px auto 0;font-size:12px;color:var(--muted);line-height:1.5;display:flex;gap:8px;align-items:flex-start;max-width:900px}
+  .fin-caption svg{width:15px;height:15px;flex:0 0 auto;margin-top:1px;color:var(--muted)}
+
+  /* ---------- Guided CTA / toast ---------- */
+  .guide{
+    margin-top:20px;padding:15px 18px;border-radius:14px;border:1px dashed #BFDDC4;background:var(--surface);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .guide .g-ic{width:32px;height:32px;border-radius:9px;background:var(--agent-tint);color:var(--agent);display:grid;place-items:center;flex:0 0 auto}
+  .guide .g-ic svg{width:17px;height:17px}
+  .guide .g-txt{flex:1;min-width:180px}
+  .guide .g-txt b{font-size:13.5px;font-weight:650;display:block}
+  .guide .g-txt span{font-size:12.5px;color:var(--muted)}
+
+  .success-hero{max-width:640px;text-align:center;padding:40px 30px}
+  .success-hero .sh-ic{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;background:var(--success-tint);color:var(--success);display:grid;place-items:center;animation:pop .4s cubic-bezier(.2,1.3,.4,1) both}
+  @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+  .success-hero .sh-ic svg{width:32px;height:32px}
+  .success-hero h3{font-size:20px;font-weight:750;margin:0 0 6px}
+  .success-hero p{color:var(--muted);font-size:14px;margin:0 auto 22px;max-width:400px;line-height:1.5}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  @media (max-width:860px){
+    .fin-grid{grid-template-columns:1fr}
+    .pipeline-inner{overflow-x:auto}
+    .topbar-inner{flex-wrap:wrap;gap:12px}
+    .roles{order:3;width:100%;justify-content:space-between}
+    .report{overflow-x:auto}
+    .tbl{min-width:720px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001s!important;transition-duration:.05s!important}
+    .radar::before,.radar::after{display:none}
+  }
+
+  /* --- New trip affordances --- */
+  .new-trip-cta{ display:flex; justify-content:center; margin:16px 0 4px; }
+  .new-trip-float{ display:flex; justify-content:flex-end; margin:14px 2px 2px; }
+  .new-trip-float .btn{ font-size:13px; }
+
+  /* --- Empty approvals state --- */
+  .empty-approvals{ text-align:center; padding:40px 28px; }
+  .empty-approvals .ea-ic{ width:52px; height:52px; margin:0 auto 14px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--good-tint,#e6f6ec); color:var(--good,#1a8f4c); }
+  .empty-approvals .ea-ic svg{ width:26px; height:26px; }
+  .empty-approvals h3{ font-size:18px; font-weight:750; margin:0 0 6px; }
+  .empty-approvals p{ color:var(--muted,#666); max-width:420px; margin:0 auto; font-size:14px; }
+
+  /* --- Tips master toggle --- */
+  .tips-toggle{ display:inline-flex; align-items:center; gap:7px; cursor:pointer; user-select:none;
+    font-size:12.5px; font-weight:600; color:var(--muted); margin-right:2px; }
+  .tips-toggle input{ position:absolute; opacity:0; width:0; height:0; }
+  .tips-toggle .tt-track{ width:34px; height:19px; border-radius:20px; background:var(--line);
+    position:relative; transition:background .18s ease; flex:0 0 auto; }
+  .tips-toggle .tt-thumb{ position:absolute; top:2px; left:2px; width:15px; height:15px; border-radius:50%;
+    background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.25); transition:transform .18s ease; }
+  .tips-toggle input:checked + .tt-track{ background:var(--accent, #4f46e5); }
+  .tips-toggle input:checked + .tt-track .tt-thumb{ transform:translateX(15px); }
+  .tips-toggle .tt-label{ line-height:1; }
+
+  .restart-wrap{ position:relative; display:inline-flex; }
+
+  /* Tooltip anchored to a right-side element (restart) — arrow points up-right */
+  .tip-bubble.tip-right{ left:auto; right:0; transform:none; }
+  .tip-bubble.tip-right::before{ left:auto; right:18px; transform:none; }
+
+  /* Tooltip anchored inside a sub-nav stage — sits below the stage */
+  .tip-bubble.tip-stage{ top:calc(100% + 10px); left:50%; transform:translateX(-50%); z-index:90; }
+</style>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-logo" src="data:image/png;base64,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" alt="Ema">
+        <div class="brand-text">
+          <span>Travel &amp; Expense Agent</span>
+        </div>
+      </div>
+
+      <nav class="roles" aria-label="Switch role">
+        <button class="role-btn" data-role="employee"><span class="dot"></span>Employee</button>
+        <button class="role-btn" data-role="manager"><span class="dot"></span>Manager</button>
+        <button class="role-btn" data-role="finance"><span class="dot"></span>Finance</button>
+        <div class="tip-bubble hidden" id="roleTip">
+          <button class="tip-close" id="roleTipClose" aria-label="Dismiss">×</button>
+          <b>Pick your role.</b> One person can wear every hat — plan a trip &amp; file expenses as an <b>Employee</b>, track your team's approvals as a <b>Manager</b>, and see org-wide spend as <b>Finance</b>.
+        </div>
+      </nav>
+
+      <label class="tips-toggle" title="Show or hide the guided tips">
+        <input type="checkbox" id="tipsToggle" checked="">
+        <span class="tt-track"><span class="tt-thumb"></span></span>
+        <span class="tt-label">Show tooltips</span>
+      </label>
+
+      <div class="restart-wrap">
+        <button class="restart" id="restartBtn" title="Restart demo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          Restart
+        </button>
+        <div class="tip-bubble tip-right hidden" id="restartTip">
+          <button class="tip-close" id="restartTipClose" aria-label="Dismiss">×</button>
+          Start the whole demo over anytime — resets every tab to the beginning.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pipeline ribbon -->
+  <div class="pipeline">
+    <button class="back-link" id="backBtn" title="Back" disabled="">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flip-x"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+      Back
+    </button>
+    <div class="pipeline-inner" id="pipeline"></div>
+  </div>
+
+  <!-- Stage -->
+  <main class="stagewrap">
+    <div id="stage" aria-live="polite"></div>
+  </main>
+
+<script>
+/* ============================================================
+   Ema Travel & Expense Agent — scripted prototype
+   Front-end only. All data mocked. No backend / no LLM calls.
+   ============================================================ */
+
+// ---------- Icons (inline, feather-style) ----------
+const I = {
+  compass:'<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z"/>',
+  receipt:'<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  checkSm:'<path d="M20 6 9 17l-5-5"/>',
+  clipboardCheck:'<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
+  plane:'<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 4.3 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/>',
+  hotel:'<path d="M2 20h20"/><path d="M4 20V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M12 9h7a1 1 0 0 1 1 1v10"/><path d="M7 8h.01M7 12h.01M7 16h.01"/>',
+  car:'<path d="M5 17H3v-5l2-4h10l3 4h1a2 2 0 0 1 2 2v3h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>',
+  send:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+  building:'<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/>',
+  radar:'<path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12 20 4"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 6a6 6 0 1 0 6 6"/>',
+  mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/>',
+  camera:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/>',
+  card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+  alert:'<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
+  sparkle:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
+  bot:'<rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 4h8"/><circle cx="9" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>',
+  arrowRight:'<path d="M5 12h14M13 5l7 7-7 7"/>',
+  info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+  trendUp:'<path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/>',
+  lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+  file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/>',
+  clock:'<circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/>',
+  chevron:'<path d="m9 18 6-6-6-6"/>'
+};
+function svg(name, cls){
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" '+(cls?('class="'+cls+'"'):'')+'>'+I[name]+'</svg>';
+}
+
+// ---------- Mock data ----------
+// Amounts retuned so the nine line items sum to EXACTLY $2,340.
+// Booked (items 1-3) = $1,930 ; exception (item 9) = $180.
+const TRIP = { name:'Chicago · Client review', dates:'Thu Jul 16 – Fri Jul 17, 2026', total:2340, booked:1930 };
+
+// Other employees' reports landing in Finance — org-wide, not just Aayush's
+const ORG_REPORTS = [
+  { who:'Aayush G.', trip:'Chicago',   dates:TRIP.dates },
+  { who:'Rajat S.',  trip:'Austin',    dates:'Jun 10–11, 2026' },
+  { who:'Nilesh R.', trip:'Bangalore', dates:'May 5–8, 2026' }
+];
+
+const LINE_ITEMS = [
+  {n:1, date:'Jul 16', merchant:'United 1198 — SEA ⇄ ORD', sub:'Round trip · 7:10a out / 6:45p back', cat:'Airfare',          gl:'6010', amt:842, src:'corp',  ok:true},
+  {n:2, date:'Jul 16', merchant:'Kimpton Gray — Chicago',    sub:'2 nights · 0.3 mi from client office', cat:'Lodging',      gl:'6020', amt:896, src:'corp',  ok:true},
+  {n:3, date:'Jul 16', merchant:'Hertz rental car',          sub:'2 days · compact', cat:'Ground transport',                 gl:'6030', amt:192, src:'corp',  ok:true},
+  {n:4, date:'Jul 16', merchant:'Uber — SEA airport → home', sub:'Return leg', cat:'Ground transport',                        gl:'6030', amt:48,  src:'email', ok:true},
+  {n:5, date:'Jul 16', merchant:'Uber — ORD → hotel',        sub:'Arrival leg', cat:'Ground transport',                       gl:'6030', amt:64,  src:'email', ok:true},
+  {n:6, date:'Jul 16', merchant:'Lunch — RPM Steak bar',     sub:'Working lunch', cat:'Meals',                                gl:'6040', amt:58,  src:'corp',  ok:true},
+  {n:7, date:'Jul 17', merchant:'Coffee / snacks',           sub:'Intelligentsia', cat:'Meals',                               gl:'6040', amt:22,  src:'snap',  ok:true},
+  {n:8, date:'Jul 16', merchant:'Cash taxi + tip',           sub:'Late-night return', cat:'Ground transport',                 gl:'6030', amt:38,  src:'snap',  ok:true},
+  {n:9, date:'Jul 16', merchant:'Steakhouse dinner',         sub:'Bavette’s', cat:'Meals',                                    gl:'6040', amt:180, src:'corp',  ok:false,
+       flag:'Over $75 dinner limit · no attendees listed'}
+];
+
+const SRC_META = {
+  corp:  {label:'Corp card • auto', icon:'card'},
+  email: {label:'Email receipt',    icon:'mail'},
+  snap:  {label:'Snapped',          icon:'camera'}
+};
+
+// Baseline to restore on restart — LINE_ITEMS/TRIP.total get mutated when a
+// manually-snapped out-of-pocket item is added.
+const ORIGINAL_ITEM_COUNT = LINE_ITEMS.length;
+const ORIGINAL_TOTAL = TRIP.total;
+
+// The expense the agent has zero visibility into: no corp-card swipe, no
+// email trail. This is what the "snap a receipt" flow extracts and adds.
+const SNAP_CANDIDATE = {
+  merchant:'Blue Bottle Coffee', sub:'123 Market Street · paid cash', cat:'Meals', gl:'6040', amt:19.60, date:'Jul 17'
+};
+const RECEIPT_IMG = 'data:image/jpeg;base64,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';
+
+// Other trips the Expense Agent has touched — feeds the Expense Hub digest
+const READY_REPORT = {
+  name:'Austin · Sales kickoff', dates:'Jun 24–25, 2026', total:1540, items:7,
+  line:'Built from your Austin trip — 7 items, 0 flagged, ready to submit.'
+};
+const PAST_REPORTS = [
+  { name:'Denver · Partner summit',    dates:'May 18–19, 2026', total:980, status:'Reimbursed' },
+  { name:'NYC · Quarterly planning',   dates:'Apr 9–10, 2026',  total:612, status:'Reimbursed' }
+];
+const ORIGINAL_PAST_REPORTS = JSON.parse(JSON.stringify(PAST_REPORTS));  // restore on full restart (newTripReset archives into PAST_REPORTS)
+
+// ---------- Manager tab: team spend ----------
+const TEAM_MEMBERS = [
+  { name:'Aayush G.', trips:1, spend:2340, note:'1 pending your approval', pending:true },
+  { name:'Priya S.',  trips:2, spend:1870, note:'Clear — nothing pending', pending:false },
+  { name:'Marcus D.', trips:2, spend:3120, note:'Clear — nothing pending', pending:false }
+];
+const TEAM_BUDGET = { monthly:12000, spent:7330 };
+const TEAM_CATS = [
+  {k:'Airfare', v:2860},
+  {k:'Lodging', v:2210},
+  {k:'Ground transport', v:640},
+  {k:'Meals', v:340},
+  {k:'Client entertainment', v:1280}
+];
+
+// ---------- Finance tab: high-level budget approvals ----------
+const BUDGET_REQUESTS = [
+  { id:1, name:'Q3 sales offsite · Austin',        dept:'Sales',       amount:45000, status:'pending',  note:"Agent flagged: 18% above last year's offsite spend." },
+  { id:2, name:'Marketing conference sponsorship', dept:'Marketing',   amount:22000, status:'pending',  note:'In line with the approved marketing budget.' },
+  { id:3, name:'Eng team summit · Denver',         dept:'Engineering', amount:31000, status:'approved', note:'Approved last week.' }
+];
+
+const ITINERARY = [
+  { tag:'rec', label:'Recommended', ok:true, total:1930, legs:[
+      {icon:'plane', b:'United 1198 · SEA ⇄ ORD', s:'Thu 7:10a → 1:05p · Fri 6:45p → 9:20p', p:842},
+      {icon:'hotel', b:'Kimpton Gray', s:'0.3 mi from client office · 2 nights', p:896},
+      {icon:'car',   b:'Hertz rental car', s:'2 days · compact', p:192}
+  ]},
+  { tag:'alt', label:'Alternative · lower cost', ok:true, total:1500, legs:[
+      {icon:'plane', b:'Alaska 12 · SEA ⇄ ORD', s:'Thu 6:00a → 11:55a · Fri 7:10p → 9:50p', p:788},
+      {icon:'hotel', b:'Hampton Inn Loop', s:'0.8 mi from client office · 2 nights', p:712},
+      {icon:'car',   b:'No car — rideshare', s:'Est. ground covered separately', p:0}
+  ]},
+  { tag:'alt', label:'Alternative · closest hotel', ok:false, flag:'Hotel over $380/night cap', total:2277, legs:[
+      {icon:'plane', b:'American 340 · SEA ⇄ ORD', s:'Thu 8:30a → 2:20p · Fri 6:05p → 8:40p', p:905},
+      {icon:'hotel', b:'The Langham', s:'0.1 mi from client office · 2 nights · $590/night', p:1180},
+      {icon:'car',   b:'Hertz rental car', s:'2 days · compact', p:192}
+  ]}
+];
+
+const fmt = n => '$'+(Number.isInteger(n) ? n.toLocaleString('en-US') : n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+
+// ---------- State ----------
+const S = {
+  role:'employee',
+  empStep:1,          // 1 chat · 2 itinerary · 3 tripwatch · 4 report
+  chatSent:false,
+  chatAdvanced:false,   // true once chat -> itinerary timer has fired; guards the re-arm so Back-to-chat stays on chat
+  chatText:'',
+  exceptionResolved:false,
+  sentBack:false,
+  submitted:false,
+  approved:false,
+  apprCleared:false,   // true once manager has approved AND returned to queue -> request removed, empty state shown
+  tipsOn:true,         // master toggle (next to Restart). OFF = no tooltips at all.
+  tipsSeen:{},         // which of the 6 tooltips have been shown/dismissed this run
+  activeTip:null,      // the tooltip id currently visible (only one at a time)
+  view:'main',         // 'main' or 'expenseHub' (employee only)
+  expPreview:false,
+  mgrView:'approvals', // 'approvals' or 'teamspend' (manager only)
+  finView:'orgspend',  // 'orgspend', 'budgets', or 'roi' (finance only)
+  snapStep:0,          // 0 idle · 1 uploading · 2 extracting · 3 confirm — the "snap a receipt" capture flow
+  snapAdded:false,
+  travelApprovalRequested:false
+};
+let watchTimer=null;
+let snapTimer=null;
+
+// ---------- Back navigation (up to 6 pages) ----------
+const NAV_HISTORY=[];
+function pageKey(s){ return s.role+'|'+s.empStep+'|'+s.view+'|'+s.mgrView+'|'+s.finView; }
+// Wrap any handler that changes which screen is shown. Handlers that only
+// change content on the current screen (approve, resolve exception, etc.)
+// call render() directly and are intentionally not tracked as "pages".
+function go(mutate){
+  const before=pageKey(S);
+  const snap=JSON.parse(JSON.stringify(S));
+  mutate();
+  if(pageKey(S)!==before){
+    NAV_HISTORY.push(snap);
+    if(NAV_HISTORY.length>6) NAV_HISTORY.shift();
+  }
+  render();
+}
+function goBack(){
+  if(!NAV_HISTORY.length) return;
+  Object.assign(S, NAV_HISTORY.pop());
+  render();
+}
+
+// ---------- Pipeline (contextual per tab — each persona has its own 2 sub-views) ----------
+function renderPipeline(){
+  let stages, activeKey, isProcess;
+
+  if(S.role==='employee'){
+    stages = [
+      {key:'travel',  icon:'compass', b:'Travel Agent',  s:'Plan &amp; book the trip', agent:false},
+      {key:'expense', icon:'receipt', b:'Expense Agent',  s:'Track approval &amp; reimbursement', agent:true}
+    ];
+    activeKey = (S.view==='expenseHub' || S.empStep>2) ? 'expense' : 'travel';
+    isProcess = true; // a real sequence: travel → expense, worth a hand-off flourish
+  } else if(S.role==='manager'){
+    stages = [
+      {key:'approvals', icon:'clipboardCheck', b:'Approvals',  s:'Review pending requests', agent:false},
+      {key:'teamspend', icon:'trendUp',        b:'Team Spend', s:'Trends &amp; budget', agent:false}
+    ];
+    activeKey = S.mgrView;
+    isProcess = false; // two independent lenses, not a progression
+  } else {
+    stages = [
+      {key:'orgspend', icon:'building',       b:'Org Spend',        s:'Company-wide categories', agent:false},
+      {key:'budgets',  icon:'clipboardCheck', b:'Budget Approvals', s:'High-level sign-off', agent:false},
+      {key:'roi',      icon:'sparkle',        b:'Agent ROI',        s:'Time saved &amp; impact', agent:true}
+    ];
+    activeKey = S.finView;
+    isProcess = false;
+  }
+  const activeIdx = stages.findIndex(s=>s.key===activeKey);
+
+  let html='';
+  stages.forEach((st,i)=>{
+    const cls=[ 'stage', st.agent?'agentstage':'', 'clickable' ];
+    if(isProcess && i<activeIdx) cls.push('done');
+    if(i===activeIdx) cls.push('active');
+    html+='<div class="'+cls.join(' ')+'" data-stagekey="'+st.key+'" tabindex="0" role="button">'
+        +   '<div class="ic">'+svg(st.icon)+'</div>'
+        +   '<div class="lab"><b>'+st.b+'</b><span>'+st.s+'</span></div>'
+        + '</div>';
+    if(i<stages.length-1){
+      const flow = isProcess && (i<activeIdx);
+      const midLabel = isProcess
+        ? '<span class="handoff-mid">'+svg('sparkle')+'Silent agent-to-agent hand-off</span>'
+        : '';
+      html+='<div class="stage-arrow-wrap"><div class="stage-arrow'+(flow?' flow':'')+'"></div>'+midLabel+'</div>';
+    }
+  });
+  document.getElementById('pipeline').innerHTML=html;
+
+  // Sub-nav tooltips (#2 expense, #3 teamspend, #4 budgets, #5 roi) anchor to their stage.
+  const TIP_ON_STAGE = { expense:'expense', teamspend:'teamspend', budgets:'budgets', roi:'roi' };
+  const TIP_TEXT = {
+    expense:  'Your Expense Agent\'s home — see reports it filed automatically, or add an out-of-pocket expense it couldn\'t capture on its own.',
+    teamspend:'See how your team is spending against budget — approvals, rejections, policy exceptions — and take action.',
+    budgets:  'Sign off on high-level budget requests here before the spend is committed.',
+    roi:      'The business case — hours saved, faster close, and the measurable ROI the agents deliver.'
+  };
+  document.querySelectorAll('.stage.clickable').forEach(el=>{
+    const key = el.dataset.stagekey;
+    if(TIP_ON_STAGE[key] && S.activeTip===key){
+      const bub=document.createElement('div');
+      bub.className='tip-bubble tip-stage';
+      bub.id='stageTip';
+      bub.innerHTML='<button class="tip-close" id="stageTipClose" aria-label="Dismiss">&times;</button>'+TIP_TEXT[key];
+      el.style.position='relative';
+      el.appendChild(bub);
+      const close=bub.querySelector('#stageTipClose');
+      if(close) close.onclick=(e)=>{ e.stopPropagation(); dismissTip(); };
+    }
+    el.onclick=()=>goToStage(el.dataset.stagekey);
+    el.onkeydown=(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); goToStage(el.dataset.stagekey); } };
+  });
+}
+
+// ---------- Role tabs ----------
+function renderRoles(){
+  document.querySelectorAll('.role-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.role===S.role);
+  });
+  document.getElementById('roleTip').classList.toggle('hidden', S.activeTip!=='role');
+  document.getElementById('restartTip').classList.toggle('hidden', S.activeTip!=='restart');
+  document.body.classList.remove('theme-employee','theme-manager','theme-finance');
+  document.body.classList.add('theme-'+S.role);
+}
+
+// ============================================================
+//  SCREENS
+// ============================================================
+function screenChat(){
+  const chat = (S.chatSent && !S.chatAdvanced)
+    ? '<div class="chat-window" id="chatWindow">'
+      + '<div class="bubble user"><div class="avatar user">A</div><div class="bubble-body">'+S.chatText+'</div></div>'
+      + '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body"><div class="thinking"><i></i><i></i><i></i></div></div></div>'
+      + '</div>'
+    : (S.chatSent && S.chatAdvanced)
+    ? '<div class="chat-window" id="chatWindow">'
+      + '<div class="bubble user"><div class="avatar user">A</div><div class="bubble-body">'+S.chatText+'</div></div>'
+      + '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body">Ready when you are — send this again to see your itinerary, or edit it to plan a different trip.</div></div>'
+      + '</div>'
+    : '<div class="chat-window" id="chatWindow">'
+      + '<div class="chat-empty">'
+      +   '<div class="halo">'+svg('compass')+'</div>'
+      +   '<b>Where do you need to go?</b>'
+      +   '<p>Tell the Travel Agent your trip in plain language. It handles search, policy, and booking.</p>'
+      + '</div></div>';
+
+  return ''
+  + '<h2 class="screen-title">Plan a trip</h2>'
+  + '<p class="screen-sub">Today, travel is <b>employee-triggered</b>: state your intent once and the agent takes it from there. Next: the Travel Agent will read your emails and Slack messages to spot a trip before you do — surfacing recommended options right in this chat to get you started.</p>'
+  + '<div class="chat-label">'+svg('bot')+'Chat with your Travel Agent</div>'
+  + '<div class="card chat-shell">'
+  +   chat
+  +   '<div class="composer">'
+  +     '<div class="chips">'
+  +       '<button class="chip" id="promptChip">“I need to be in Chicago Thu for the client review, back Fri evening.”</button>'
+  +     '</div>'
+  +     '<div class="composer-row">'
+  +       '<input id="chatInput" type="text" placeholder="Where do you need to go?" autocomplete="off" />'
+  +       '<button class="send-btn" id="sendBtn" aria-label="Send">'+svg('send')+'</button>'
+  +     '</div>'
+  +   '</div>'
+  + '</div>';
+}
+
+function screenItinerary(){
+  let opts='';
+  ITINERARY.forEach(o=>{
+    let legs='';
+    o.legs.forEach(l=>{
+      legs+='<div class="leg"><div class="lic">'+svg(l.icon)+'</div>'
+          + '<div class="ldesc"><b>'+l.b+'</b><span>'+l.s+'</span></div>'
+          + '<div class="lprice">'+(l.p>0?fmt(l.p):'—')+'</div></div>';
+    });
+    const policy = o.ok
+      ? '<span class="pill ok">'+svg('check')+'In policy</span>'
+      : '<span class="pill flag">'+svg('alert')+o.flag+'</span>';
+    const approvalNote = (!o.ok && S.travelApprovalRequested)
+      ? '<div class="rf-note" style="padding:0 18px 16px;margin-top:-6px">'+svg('sparkle')+'Sent to your manager — you’ll be notified if it’s approved, no need to check back.</div>'
+      : '';
+    opts+='<div class="card opt'+(o.tag==='rec'?' recommended':'')+'">'
+        + '<div class="opt-head">'
+        +   '<span class="opt-tag '+(o.tag==='rec'?'rec':'alt')+'">'+o.label+'</span>'
+        +   policy
+        + '</div>'
+        + legs
+        + '<div class="opt-foot">'
+        +   '<div class="opt-total">Booked total<b>'+fmt(o.total)+'</b></div>'
+        +   (o.tag==='rec'
+              ? '<button class="btn btn-primary" id="bookBtn">'+svg('check')+'Book trip</button>'
+              : (o.ok ? '<button class="btn btn-ghost" data-selectalt>Select</button>'
+                      : (S.travelApprovalRequested
+                          ? '<button class="btn btn-ghost" disabled style="opacity:.6;cursor:not-allowed">'+svg('clock')+'Awaiting manager approval</button>'
+                          : '<button class="btn btn-ghost" id="requestApprovalBtn">'+svg('arrowRight')+'Send for approval</button>')))
+        + '</div>'
+        + approvalNote
+        + '</div>';
+  });
+
+  return ''
+  + '<h2 class="screen-title">Itinerary — ready to book</h2>'
+  + '<p class="screen-sub">The agent parsed your dates, destination and purpose, then filtered to <b>in-policy</b> options only. Out-of-policy choices are never surfaced silently — they’re flagged.</p>'
+  + '<div class="itin-grid">'+opts+'</div>';
+}
+
+function screenTripWatch(){
+  return ''
+  + '<div class="badge-trigger badge-agent"><span class="emo">🤖</span> The agent started this — you never opened a report</div>'
+  + '<h2 class="screen-title">Trip in progress</h2>'
+  + '<p class="screen-sub">Expense filing is <b>agent-triggered</b>. Trip-end and card-posting are clean, machine-detectable events — so the agent fires itself. Watch: the report will arrive on its own.</p>'
+  + '<div class="watch">'
+  +   '<div class="card watch-card">'
+  +     '<div class="radar">'+svg('radar')+'</div>'
+  +     '<div class="wtext"><b>Expense Agent is tracking your trip…</b><span>'+TRIP.dates+' · monitoring corporate-card feed, inbox receipts &amp; captures</span></div>'
+  +   '</div>'
+  +   '<div class="card" style="padding:16px 18px">'
+  +     '<div class="watch-steps" id="watchSteps">'
+  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Trip booked &amp; added to calendar</div>'
+  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Corporate-card transactions posting automatically</div>'
+  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Email receipts parsed (2 Uber rides)</div>'
+  +       '<div class="wstep pending" id="assembleStep"><span class="wtick"></span>Assembling &amp; policy-checking report…</div>'
+  +     '</div>'
+  +   '</div>'
+  +   '<div id="notifSlot" aria-live="assertive"></div>'
+  + '</div>';
+}
+
+function notifCard(){
+  return '<div class="notif" id="notifCard">'
+    + '<div class="nic">'+svg('receipt')+'</div>'
+    + '<div class="nbody">'
+    +   '<div class="ntitle">Your Chicago trip report is ready <span class="live">AGENT-INITIATED</span></div>'
+    +   '<div class="nsub"><b>'+LINE_ITEMS.length+' items · '+fmt(TRIP.total)+'</b> · all in policy except <b>1</b>. The Expense Agent assembled it from your corporate card, inbox and captures — nothing for you to fill in.</div>'
+    +   '<button class="btn btn-agent" id="reviewBtn">'+svg('arrowRight')+'Review &amp; submit</button>'
+    + '</div>'
+  + '</div>';
+}
+
+function screenReport(){
+  let rows='';
+  LINE_ITEMS.forEach(it=>{
+    const resolved = (it.n===9 && S.exceptionResolved);
+    const isFlag = (it.n===9 && !S.exceptionResolved);
+    const sm = SRC_META[it.src];
+    const cat = resolved ? 'Client entertainment' : it.cat;
+    const gl  = resolved ? '6045' : it.gl;
+    const statCell = isFlag
+      ? '<span class="stat">'+svg('alert')+'Exception</span>'
+      : '<span class="stat" style="color:var(--success)">'+svg('check')+'In policy</span>';
+    rows+='<tr class="'+(isFlag?'row-flag':'row-ok')+'">'
+        + '<td style="color:var(--muted);white-space:nowrap">'+it.date+'</td>'
+        + '<td><div class="m-name"><span class="rcpt">'+svg('file')+'</span><span>'+it.merchant+'<div class="m-sub">'+it.sub+'</div></span></div></td>'
+        + '<td><span class="cat-pill">'+cat+'</span></td>'
+        + '<td><span class="gl">'+gl+'</span></td>'
+        + '<td><span class="src '+it.src+'">'+svg(sm.icon)+sm.label+'</span></td>'
+        + '<td class="amt">'+fmt(it.amt)+'</td>'
+        + '<td>'+statCell+'</td>'
+        + '</tr>';
+  });
+
+  const exceptionPanel = ''
+    + '<div class="exception-panel'+(S.exceptionResolved?' hide':'')+'" id="excPanel">'
+    +   '<div class="eic">'+svg('alert')+'</div>'
+    +   '<div class="ebody">'
+    +     '<div class="etitle">One item needs a quick confirmation</div>'
+    +     '<div class="eq">This <b>$180 steakhouse dinner</b> is over the <b>$75</b> dinner limit and has no attendees listed. Was this a client dinner? If so, I’ll route it as <b>entertainment</b> — who attended?</div>'
+    +     '<div class="eactions">'
+    +       '<button class="ebtn primary" id="resolveClient">Client dinner — 2 client attendees</button>'
+    +       '<button class="ebtn" id="resolvePersonal">Personal — remove from report</button>'
+    +     '</div>'
+    +   '</div>'
+    + '</div>';
+
+  const resolvedNote = ''
+    + '<div class="resolved-note'+(S.exceptionResolved?' show':'')+'" id="resolvedNote">'
+    +   svg('check')+'<span>Resolved — re-coded to <b>Client entertainment (GL 6045)</b>, 2 client attendees attached. Report is fully policy-clear.</span>'
+    + '</div>';
+
+  const submitBtn = S.exceptionResolved
+    ? '<button class="btn btn-primary" id="submitBtn">'+svg('check')+'Submit for approval</button>'
+    : '<button class="btn btn-primary" id="submitBtn" disabled style="opacity:.45;cursor:not-allowed">Resolve the exception to submit</button>';
+
+  const sentBackBanner = S.sentBack
+    ? '<div class="guide" style="border-color:var(--warn-line);background:var(--warn-tint);margin-bottom:16px">'
+      +   '<div class="g-ic" style="background:#fff;color:var(--warn)">'+svg('alert')+'</div>'
+      +   '<div class="g-txt"><b>Sent back by your manager</b><span>The $180 dinner exception needs another look before you can resubmit.</span></div>'
+      + '</div>'
+    : '';
+
+  const flaggedNow = LINE_ITEMS.some(it=>it.n===9) && !S.exceptionResolved;
+  const okCount = LINE_ITEMS.length - (flaggedNow?1:0);
+
+  return ''
+  + '<div class="badge-trigger badge-agent"><span class="emo">🤖</span> The agent started this</div>'
+  + sentBackBanner
+  + '<h2 class="screen-title">Your expense report — already assembled</h2>'
+  + '<p class="screen-sub">You didn’t build this. The Expense Agent matched every charge to the trip, categorized, GL-coded, attached receipts and policy-checked it. You only resolve true exceptions, then approve once.</p>'
+  + '<div class="card report">'
+  +   '<div class="report-head">'
+  +     '<div class="rh-l">'
+  +       '<h3>'+TRIP.name+'</h3>'
+  +       '<div class="meta">'+TRIP.dates+' · '+LINE_ITEMS.length+' items</div>'
+  +       '<div class="assembled">'+svg('sparkle')+'Assembled by Expense Agent</div>'
+  +     '</div>'
+  +     '<div class="rh-r">'
+  +       '<div class="tot-lab">Total</div>'
+  +       '<div class="tot-val">'+fmt(TRIP.total)+'</div>'
+  +       '<div class="tot-note" id="totNote">'+(S.exceptionResolved?'All items in policy':okCount+' of '+LINE_ITEMS.length+' in policy')+'</div>'
+  +     '</div>'
+  +   '</div>'
+  +   '<table class="tbl">'
+  +     '<thead><tr><th>Date</th><th>Merchant</th><th>Category</th><th>GL</th><th>Captured via</th><th class="num">Amount</th><th>Status</th></tr></thead>'
+  +     '<tbody>'+rows+'</tbody>'
+  +   '</table>'
+  +   exceptionPanel
+  +   resolvedNote
+  +   '<div class="report-foot">'
+  +     '<div class="rf-note">'+svg('sparkle')+'Corporate-card items were zero-touch. Out-of-pocket items came from inbox &amp; one-tap captures.</div>'
+  +     submitBtn
+  +   '</div>'
+  + '</div>'
+  + screenSnapCard();
+}
+
+function screenSnapCard(){
+  if(S.submitted) return '';
+  if(S.snapAdded){
+    return '<div class="card snap-card"><div class="snap-done">'+svg('check')+'<span>Added — '+SNAP_CANDIDATE.merchant+', '+fmt(SNAP_CANDIDATE.amt)+'. It’s now in the table above, line '+LINE_ITEMS.length+'.</span></div></div>';
+  }
+  if(S.snapStep===0){
+    return '<div class="card snap-card"><div class="snap-idle">'
+      +   '<div class="si-ic">'+svg('camera')+'</div>'
+      +   '<div class="si-txt"><b>Paid out of pocket, no card or email trail?</b><span>No corporate-card swipe, no inbox receipt — the agent has zero visibility into this one until you snap it.</span></div>'
+      +   '<button class="btn btn-agent" id="snapBtn">'+svg('camera')+'Snap a receipt</button>'
+      + '</div></div>';
+  }
+  const statusBlock = S.snapStep===1
+    ? '<div class="ss-title">Uploading receipt…</div><div class="ss-sub">'+SNAP_CANDIDATE.merchant+'</div><div class="thinking"><i></i><i></i><i></i></div>'
+    : S.snapStep===2
+    ? '<div class="ss-title">Agent extracting details…</div><div class="ss-sub">Reading merchant, amount, and category</div><div class="thinking"><i></i><i></i><i></i></div>'
+    : '<div class="ss-title">Got it — here’s what the agent found</div>'
+      + '<div class="ss-sub">Confirm and it’ll be added as a new line item.</div>'
+      + '<div class="snap-fields">'
+      +   '<div class="snap-field"><span>Merchant</span><span>'+SNAP_CANDIDATE.merchant+'</span></div>'
+      +   '<div class="snap-field"><span>Amount</span><span>'+fmt(SNAP_CANDIDATE.amt)+'</span></div>'
+      +   '<div class="snap-field"><span>Category</span><span>'+SNAP_CANDIDATE.cat+'</span></div>'
+      +   '<div class="snap-field"><span>Payment</span><span>Personal (cash)</span></div>'
+      + '</div>'
+      + '<div style="display:flex;gap:8px">'
+      +   '<button class="btn btn-primary" id="snapConfirmBtn">'+svg('check')+'Add to report</button>'
+      +   '<button class="btn btn-ghost" id="snapCancelBtn">Cancel</button>'
+      + '</div>';
+  return '<div class="card snap-card"><div class="snap-flow">'
+    +   '<img class="snap-thumb" src="'+RECEIPT_IMG+'" alt="Snapped receipt" />'
+    +   '<div class="snap-status">'+statusBlock+'</div>'
+    + '</div></div>';
+}
+
+// The live Chicago trip's place in its own lifecycle — this is what lets the
+// employee track it end-to-end from one tab, without ever visiting Manager.
+function liveTripStage(){
+  if(S.empStep<4) return null;         // trip not yet ended / report not built
+  if(S.approved) return 'approved';
+  if(S.sentBack) return 'changes';
+  if(S.submitted) return 'submitted';
+  if(S.exceptionResolved) return 'ready';
+  return 'attention';
+}
+
+function liveTripRow(kind){
+  const openBtn = '<button class="btn btn-agent" id="openLiveReportBtn">'+svg('arrowRight')+{
+    attention:'Resolve &amp; review', ready:'Review &amp; submit', changes:'Review &amp; resubmit'
+  }[kind]+'</button>';
+  const meta = {
+    attention:{ic:'alert',    warn:true,  line:'1 item needs your input before this can be submitted — a flagged $180 dinner.', tag:'Needs attention', action:openBtn},
+    ready:    {ic:'receipt',  warn:false, line:'Exception resolved — ready to submit for approval.',                            tag:'Ready',            action:openBtn},
+    submitted:{ic:'clock',    warn:false, line:'Submitted — waiting on your manager’s call on the one flagged item.',           tag:'Awaiting approval',action:'<button class="btn btn-ghost" id="openLiveReportBtn">View report</button>'},
+    changes:  {ic:'alert',    warn:true,  line:'Your manager sent this back — the dinner exception needs another look before resubmitting.', tag:'Needs changes', action:openBtn},
+    approved: {ic:'checkSm',  warn:false, line:'',                                                                              tag:'Approved',         action:''}
+  }[kind];
+  if(kind==='approved'){
+    return '<div class="exp-row done">'
+        +   '<div class="eic">'+svg('checkSm')+'</div>'
+        +   '<div class="ebody"><b>'+TRIP.name+'</b><span class="emeta">'+TRIP.dates+'</span></div>'
+        +   '<div class="eamt"><b>'+fmt(TRIP.total)+'</b><span>Approved</span></div>'
+        + '</div>';
+  }
+  return '<div class="exp-row">'
+      +   '<div class="eic"'+(meta.warn?' style="background:var(--warn-tint);color:var(--warn)"':'')+'>'+svg(meta.ic)+'</div>'
+      +   '<div class="ebody">'
+      +     '<b>'+TRIP.name+'</b><span class="emeta">'+TRIP.dates+' · '+LINE_ITEMS.length+' items</span>'
+      +     '<div class="eline">'+svg('sparkle')+'<span>'+meta.line+'</span></div>'
+      +     '<div class="eaction">'+meta.action+'</div>'
+      +   '</div>'
+      +   '<div class="eamt"><b>'+fmt(TRIP.total)+'</b><span>'+meta.tag+'</span></div>'
+      + '</div>';
+}
+
+function expSection(title, rows, muted){
+  if(!rows.length) return '';
+  return '<div class="card exp-section'+(muted?' muted':'')+'">'
+      +   '<div class="exp-sec-head"><h4>'+title+'</h4><span class="exp-count">'+rows.length+'</span></div>'
+      +   rows.join('')
+      + '</div>';
+}
+
+function screenExpenseHub(){
+  const stage = liveTripStage();
+  const previewNote = S.expPreview
+    ? '<div class="guide" style="margin-top:14px"><div class="g-ic">'+svg('info')+'</div>'
+      + '<div class="g-txt"><b>Preview only in this demo</b><span>In production this opens the same review screen you saw for Chicago — prefilled with all 7 Austin items, zero exceptions, one submit tap.</span></div></div>'
+    : '';
+  const austinRow = '<div class="exp-row">'
+      +   '<div class="eic">'+svg('receipt')+'</div>'
+      +   '<div class="ebody">'
+      +     '<b>'+READY_REPORT.name+'</b><span class="emeta">'+READY_REPORT.dates+' · '+READY_REPORT.items+' items</span>'
+      +     '<div class="eline">'+svg('sparkle')+'<span>'+READY_REPORT.line+'</span></div>'
+      +     '<div class="eaction"><button class="btn btn-agent" id="reviewReadyBtn">'+svg('arrowRight')+'Review &amp; submit</button></div>'
+      +   '</div>'
+      +   '<div class="eamt"><b>'+fmt(READY_REPORT.total)+'</b><span>Awaiting you</span></div>'
+      + '</div>'
+      + previewNote;
+
+  const attentionRows = stage==='attention' ? [liveTripRow('attention')] : [];
+  const readyRows     = (stage==='ready' ? [liveTripRow('ready')] : []).concat([austinRow]);
+  const awaitingRows  = stage==='submitted' ? [liveTripRow('submitted')] : [];
+  const changesRows   = stage==='changes' ? [liveTripRow('changes')] : [];
+  const handledRows   = (stage==='approved' ? [liveTripRow('approved')] : []).concat(
+    PAST_REPORTS.map(t=>
+      '<div class="exp-row done">'
+        + '<div class="eic">'+svg('checkSm')+'</div>'
+        + '<div class="ebody"><b>'+t.name+'</b><span class="emeta">'+t.dates+'</span></div>'
+        + '<div class="eamt"><b>'+fmt(t.total)+'</b><span>'+t.status+'</span></div>'
+      + '</div>'
+    )
+  );
+
+  return ''
+  + '<div class="badge-trigger badge-agent"><span class="emo">🤖</span> The agent already did this — no report to go find</div>'
+  + '<h2 class="screen-title">Expense Agent</h2>'
+  + '<p class="screen-sub">Every trip that ends becomes a report on its own. Track it end-to-end right here — submitted, approved, sent back, or reimbursed — no need to go find a manager.</p>'
+  + '<div class="exp-hub">'
+  +   expSection('Needs your input', attentionRows)
+  +   expSection('Ready for your one-tap approval', readyRows)
+  +   expSection('Awaiting manager approval', awaitingRows)
+  +   expSection('Sent back — needs changes', changesRows)
+  +   expSection('Already handled', handledRows, true)
+  + '</div>';
+}
+
+function screenApprovals(){
+  // Empty 'all caught up' state — after the manager approved & returned, or sent back.
+  if(S.apprCleared){
+    return ''
+    + '<h2 class="screen-title">Approvals</h2>'
+    + '<p class="screen-sub">The manager sees an <b>agent summary</b>, not a raw line-item form. Fully in-policy reports never reach here — they auto-clear. Only genuine exceptions surface, with context.</p>'
+    + '<div class="card empty-approvals">'
+    +   '<div class="ea-ic">'+svg('check')+'</div>'
+    +   '<h3>You\'re all caught up</h3>'
+    +   '<p>No pending approvals. The agent auto-cleared everything in policy — when a genuine exception needs your judgment, it\'ll surface here.</p>'
+    + '</div>';
+  }
+  // Just approved (confirmation), not yet returned to the queue.
+  if(S.approved){
+    return '<div class="card success-hero" style="margin:0 auto">'
+      + '<div class="sh-ic">'+svg('check')+'</div>'
+      + '<h3>Exception approved</h3>'
+      + '<p>The report is cleared and posted downstream automatically. Finance receives it already categorized, GL-coded and receipt-complete — no further action needed from you.</p>'
+      + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
+    + '</div>';
+  }
+  // Just sent back (confirmation), not yet returned to the queue.
+  if(S.sentBack){
+    return '<div class="card success-hero" style="margin:0 auto">'
+      + '<div class="sh-ic" style="background:var(--warn-tint);color:var(--warn)">'+svg('arrowRight')+'</div>'
+      + '<h3>Sent back for changes</h3>'
+      + '<p>Aayush will see this flagged in their Expense Agent tab, with the exception reopened for another look before resubmitting.</p>'
+      + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
+    + '</div>';
+  }
+  return ''
+  + '<h2 class="screen-title">Approvals</h2>'
+  + '<p class="screen-sub">The manager sees an <b>agent summary</b>, not a raw line-item form. Fully in-policy reports never reach here — they auto-clear. Only genuine exceptions surface, with context.</p>'
+  + '<div class="card appr-card approval">'
+  +   '<div class="appr-top">'
+  +     '<div class="aic">'+svg('clipboardCheck')+'</div>'
+  +     '<div><b>Approval Assist</b><span>Summarized for a fast, confident call</span></div>'
+  +   '</div>'
+  +   '<div class="appr-body">'
+  +     '<div class="appr-summary"><b>Aayush’s Chicago trip</b> — '+fmt(TRIP.total)+'. The agent auto-cleared everything in policy and flagged the one item that needs your judgment.</div>'
+  +     '<div class="appr-stats">'
+  +       '<div class="astat good"><div class="k">Auto-cleared</div><div class="v">'+(LINE_ITEMS.length-1)+' / '+LINE_ITEMS.length+'</div></div>'
+  +       '<div class="astat warnv"><div class="k">Needs your call</div><div class="v">1</div></div>'
+  +       '<div class="astat"><div class="k">Trip total</div><div class="v">'+fmt(TRIP.total)+'</div></div>'
+  +     '</div>'
+  +     '<div class="exc-detail">'
+  +       '<div class="ed-t">'+svg('alert')+'The one exception</div>'
+  +       '<div class="ed-b"><b>$180 client dinner</b> — over the $75 limit. Employee confirmed <b>2 client attendees</b>; agent re-coded it to <b>Client entertainment (GL 6045)</b>.</div>'
+  +     '</div>'
+  +     '<div class="ctx-line">'+svg('trendUp')+'<span>Context: this trip is <b>~12% under</b> the typical Chicago trip cost (~$2,660).</span></div>'
+  +     '<div class="appr-actions">'
+  +       '<button class="btn btn-primary" id="approveBtn">'+svg('check')+'Approve exception</button>'
+  +       '<button class="btn btn-ghost" id="sendbackBtn">'+svg('arrowRight')+'Send back</button>'
+  +     '</div>'
+  +     '<div class="appr-foot-note">'+svg('info')+'You’re approving one judgment call — not auditing nine line items. That’s the whole job.</div>'
+  +   '</div>'
+  + '</div>';
+}
+
+function screenOrgSpend(){
+  const cats = [
+    {k:'Airfare', v:842},
+    {k:'Lodging', v:896},
+    {k:'Ground transport', v:342},
+    {k:'Meals', v:80},
+    {k:'Client entertainment', v:180}
+  ];
+  const max = Math.max(...cats.map(c=>c.v));
+  let bars='';
+  cats.forEach(c=>{
+    bars+='<div class="barrow"><div class="blab">'+c.k+'</div>'
+        + '<div class="bartrack"><div class="barfill" style="width:'+Math.round(c.v/max*100)+'%"></div></div>'
+        + '<div class="bval">'+fmt(c.v)+'</div></div>';
+  });
+
+  return ''
+  + '<h2 class="screen-title">Org spend</h2>'
+  + '<p class="screen-sub">The end of the loop. Finance <b>receives</b> clean upstream data — categorized, coded, policy-checked, receipt-complete. No agent acts on finance’s behalf in this MVP; that’s a deliberate scope boundary.</p>'
+  + '<div class="fin-grid finance">'
+  +   '<div class="card fin-panel">'
+  +     '<h4>Chicago trip · spend by category</h4>'
+  +     '<p class="ph-sub">Posted with correct GL coding — ready for close.</p>'
+  +     bars
+  +     '<div class="fin-total"><span>Total posted</span><b>'+fmt(TRIP.total)+'</b></div>'
+  +   '</div>'
+  +   '<div class="card fin-panel">'
+  +     '<h4>Reports landing</h4>'
+  +     '<p class="ph-sub">Clean on arrival — nothing to chase.</p>'
+  +     ORG_REPORTS.map(r=>
+  '<div class="trip-row">'
+  +   '<div class="tic">'+svg('plane')+'</div>'
+  +   '<div class="tinfo"><b>'+r.who+' · '+r.trip+'</b><span>'+r.dates+'</span></div>'
+  +   '<span class="status-pill">'+svg('check')+'Posted / ready</span>'
+  + '</div>'
+      ).join('')
+  +     '<div class="clean-checks" style="margin-top:14px">'
+  +       cleanCheck('Categorized &amp; GL-coded')
+  +       cleanCheck('Policy-checked (1 exception resolved)')
+  +       cleanCheck('Receipts complete')
+  +       cleanCheck('Reconciled to card feed')
+  +     '</div>'
+  +   '</div>'
+  + '</div>'
+  + '<div class="fin-caption">'+svg('info')+'<span>Reconciliation, ERP posting, reimbursement and analytics stay <b>non-agentic</b> in this MVP — shown here to prove the end-to-end vision without claiming agents we didn’t scope. Enterprise-grade autonomy for these is the expansion play.</span></div>';
+}
+
+function cleanCheck(t){
+  return '<div class="ccheck"><span class="cc-ic">'+svg('checkSm')+'</span>'+t+'</div>';
+}
+
+function screenTeamSpend(){
+  const max = Math.max(...TEAM_CATS.map(c=>c.v));
+  let bars='';
+  TEAM_CATS.forEach(c=>{
+    bars+='<div class="barrow"><div class="blab">'+c.k+'</div>'
+        + '<div class="bartrack"><div class="barfill" style="width:'+Math.round(c.v/max*100)+'%"></div></div>'
+        + '<div class="bval">'+fmt(c.v)+'</div></div>';
+  });
+  const rows = TEAM_MEMBERS.map(m=>
+    '<div class="trip-row">'
+      + '<div class="tic">'+svg('user')+'</div>'
+      + '<div class="tinfo"><b>'+m.name+'</b><span>'+m.trips+' report(s) · '+fmt(m.spend)+'</span></div>'
+      + '<span class="status-pill'+(m.pending?' warn':'')+'">'+svg(m.pending?'alert':'check')+m.note+'</span>'
+    + '</div>'
+  ).join('');
+
+  return ''
+  + '<h2 class="screen-title">Team spend</h2>'
+  + '<p class="screen-sub">Trends and budget health across your team — so you spot a problem before an exception ever needs your approval.</p>'
+  + '<div class="appr-stats" style="max-width:820px;margin:0 auto">'
+  +   '<div class="astat"><div class="k">Team spend MTD</div><div class="v">'+fmt(TEAM_BUDGET.spent)+'</div></div>'
+  +   '<div class="astat good"><div class="k">Monthly budget</div><div class="v">'+fmt(TEAM_BUDGET.monthly)+'</div></div>'
+  +   '<div class="astat"><div class="k">Reports this month</div><div class="v">'+TEAM_MEMBERS.reduce((a,m)=>a+m.trips,0)+'</div></div>'
+  + '</div>'
+  + '<div class="card fin-panel" style="margin:16px auto 0;max-width:820px">'
+  +   '<h4>Spend by category</h4>'
+  +   '<p class="ph-sub">Team-wide, month to date.</p>'
+  +   bars
+  +   '<div class="fin-total"><span>Budget used</span><b>'+Math.round(TEAM_BUDGET.spent/TEAM_BUDGET.monthly*100)+'%</b></div>'
+  + '</div>'
+  + '<div class="card fin-panel" style="margin:16px auto 0;max-width:820px">'
+  +   '<h4>Your team</h4>'
+  +   '<p class="ph-sub">Who’s spending what this month.</p>'
+  +   rows
+  + '</div>';
+}
+
+function screenBudgetApprovals(){
+  const rows = BUDGET_REQUESTS.map(r=>{
+    const actions = r.status==='pending'
+      ? '<div class="eaction" style="display:flex;gap:8px">'
+        +   '<button class="btn btn-primary" data-budget-approve="'+r.id+'">'+svg('check')+'Approve</button>'
+        +   '<button class="btn btn-ghost" data-budget-reject="'+r.id+'">Reject</button>'
+        + '</div>'
+      : '';
+    const statusLabel = r.status==='pending' ? 'Awaiting sign-off' : r.status==='approved' ? 'Approved' : 'Rejected';
+    return '<div class="exp-row'+(r.status!=='pending'?' done':'')+'">'
+        +   '<div class="eic">'+svg('clipboardCheck')+'</div>'
+        +   '<div class="ebody">'
+        +     '<b>'+r.name+'</b><span class="emeta">'+r.dept+'</span>'
+        +     '<div class="eline">'+svg('sparkle')+'<span>'+r.note+'</span></div>'
+        +     actions
+        +   '</div>'
+        +   '<div class="eamt"><b>'+fmt(r.amount)+'</b><span>'+statusLabel+'</span></div>'
+        + '</div>';
+  }).join('');
+
+  return ''
+  + '<h2 class="screen-title">Budget approvals</h2>'
+  + '<p class="screen-sub">High-level budget requests that need finance sign-off — separate from individual expense-report exceptions, which managers clear on their own.</p>'
+  + '<div class="card exp-section" style="max-width:820px;margin:0 auto">'
+  +   '<div class="exp-sec-head"><h4>Requests</h4><span class="exp-count">'+BUDGET_REQUESTS.length+'</span></div>'
+  +   rows
+  + '</div>';
+}
+
+function roiTile(label, value, note, good){
+  return '<div class="astat'+(good?' good':'')+'" style="min-width:150px">'
+      +   '<div class="k">'+label+'</div><div class="v">'+value+'</div>'
+      +   '<div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:500">'+note+'</div>'
+      + '</div>';
+}
+
+function roiCompareRow(label, before, after, pct){
+  return '<div class="barrow">'
+      +   '<div class="blab" style="width:180px">'+label+'</div>'
+      +   '<div style="flex:1;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ink-2)">'
+      +     '<span style="text-decoration:line-through;color:var(--muted)">'+before+'</span>'
+      +     svg('arrowRight','roi-arrow')
+      +     '<b style="color:var(--success)">'+after+'</b>'
+      +     '<span style="margin-left:auto;color:var(--muted);font-weight:600">−'+pct+'%</span>'
+      +   '</div>'
+      + '</div>';
+}
+
+function screenAgentROI(){
+  return ''
+  + '<h2 class="screen-title">Agent ROI</h2>'
+  + '<p class="screen-sub">The business case for automating T&amp;E — time reclaimed from employees, managers, and finance, without loosening policy control. Finance <b>observes</b> this impact; the agents doing the work stay Travel, Expense, and Approval Assist.</p>'
+  + '<div class="appr-stats" style="max-width:900px;flex-wrap:wrap;margin:0 auto">'
+  +   roiTile('Avg. trip booked in', '3 min', 'was 24 min manually', true)
+  +   roiTile('Avg. report filed in', '0 min', 'zero-touch, agent-assembled', true)
+  +   roiTile('Avg. manager review', '45 sec', 'was ~12 min line-by-line', true)
+  +   roiTile('Auto-cleared, no exception', '89%', 'of line items need no human call')
+  +   roiTile('Hours saved this month', '142 hrs', 'org-wide, across all agents')
+  +   roiTile('Spend visible to finance', 'Same-day', 'was a 5–7 day lag')
+  + '</div>'
+  + '<div class="card fin-panel" style="margin:16px auto 0;max-width:900px">'
+  +   '<h4>Where the time comes from</h4>'
+  +   '<p class="ph-sub">Manual process vs. agent-assisted, per trip.</p>'
+  +   roiCompareRow('Planning &amp; booking a trip', '24 min', '3 min', 88)
+  +   roiCompareRow('Filing the expense report', '45 min', '0 min', 100)
+  +   roiCompareRow('Manager approval', '12 min', '&lt;1 min', 94)
+  + '</div>'
+  + '<div class="fin-caption">'+svg('info')+'<span>Faster, cleaner data sharpens finance’s own job too: budgets get set against real spend patterns instead of stale exports, and forecasts skip the manual reconciliation pass that used to come first.</span></div>';
+}
+
+function successHero(title, body, gotoRole, cta){
+  return '<div class="card success-hero" style="margin:0 auto">'
+    + '<div class="sh-ic">'+svg('check')+'</div>'
+    + '<h3>'+title+'</h3>'
+    + '<p>'+body+'</p>'
+    + '<button class="btn btn-primary" data-goto="'+gotoRole+'">'+svg('arrowRight')+cta+'</button>'
+  + '</div>';
+}
+
+// Same-tab nudge — unlike a cross-tab CTA, this never changes S.role. It just
+// points the employee at their own Expense Agent tracking view.
+function guideToHub(text, sub, cta){
+  return '<div class="guide">'
+    + '<div class="g-ic">'+svg('arrowRight')+'</div>'
+    + '<div class="g-txt"><b>'+text+'</b><span>'+sub+'</span></div>'
+    + '<button class="btn btn-primary" id="guideToHubBtn">'+cta+'</button>'
+  + '</div>';
+}
+
+// ============================================================
+//  RENDER + WIRING
+// ============================================================
+function render(){
+  if(watchTimer){clearTimeout(watchTimer);watchTimer=null;}
+  if(snapTimer){clearTimeout(snapTimer);snapTimer=null;}
+  renderRoles();
+  renderPipeline();
+  document.getElementById('backBtn').disabled = NAV_HISTORY.length===0;
+  const stage=document.getElementById('stage');
+  let html='';
+
+  if(S.role==='employee' && S.view==='expenseHub'){
+    html=screenExpenseHub();
+  } else if(S.role==='employee'){
+    if(S.empStep===1) html=screenChat();
+    else if(S.empStep===2) html=screenItinerary();
+    else if(S.empStep===3) html=screenTripWatch();
+    else if(S.empStep===4){
+      html=screenReport();
+      if(S.submitted){
+        html+=guideToHub('Submitted for approval','Track its status anytime from here — no need to go anywhere. You’ll see it move to approved (or back to you) the moment your manager acts.','View in Expense Agent');
+        html+='<div class="new-trip-cta"><button class="btn btn-primary" id="newTripSuccessBtn">'+svg('compass')+'Book a new trip</button></div>';
+      }
+    }
+  } else if(S.role==='manager'){
+    html = S.mgrView==='teamspend' ? screenTeamSpend() : screenApprovals();
+  } else {
+    html = S.finView==='budgets' ? screenBudgetApprovals() : S.finView==='roi' ? screenAgentROI() : screenOrgSpend();
+  }
+
+  // Always-available "New trip" affordance on employee screens past the chat
+  // (itinerary / trip-watch / report / expense hub). On the chat screen you're
+  // already at the start, so we don't show it there.
+  if(S.role==='employee' && !(S.view==='main' && S.empStep===1)){
+    html += '<div class="new-trip-float"><button class="btn btn-ghost" id="newTripFloatBtn" title="Start a fresh trip">'+svg('compass')+'New trip</button></div>';
+  }
+  stage.innerHTML=html;
+  stage.firstElementChild && stage.firstElementChild.classList.add('screen');
+  wire();
+  if(typeof tipEngine==='function') tipEngine();
+}
+
+function wire(){
+  // Role tabs
+  document.querySelectorAll('.role-btn').forEach(b=>{
+    b.onclick=()=>go(()=>{ S.role=b.dataset.role; S.view='main'; S.mgrView='approvals'; S.finView='orgspend'; });
+  });
+  // goto buttons (in guides / success heroes)
+  document.querySelectorAll('[data-goto]').forEach(b=>{
+    b.onclick=()=>go(()=>{ S.role=b.dataset.goto; S.view='main'; S.mgrView='approvals'; S.finView='orgspend'; });
+  });
+
+  // Expense hub — preview CTA on the ready-to-approve report
+  const reviewReady=document.getElementById('reviewReadyBtn');
+  if(reviewReady) reviewReady.onclick=()=>{ S.expPreview=true; render(); };
+
+  // Expense hub — jump into the real report at whatever stage it's at
+  const openLive=document.getElementById('openLiveReportBtn');
+  if(openLive) openLive.onclick=()=>go(()=>{ S.view='main'; });
+
+  // Same-tab nudge after submitting
+  const gth=document.getElementById('guideToHubBtn');
+  if(gth) gth.onclick=()=>go(()=>{ S.view='expenseHub'; });
+
+  // Book a new trip — success screen + always-available pill
+  const ntSuccess=document.getElementById('newTripSuccessBtn');
+  if(ntSuccess) ntSuccess.onclick=newTripReset;
+  const ntFloat=document.getElementById('newTripFloatBtn');
+  if(ntFloat) ntFloat.onclick=newTripReset;
+
+  // Manager: 'Back to approvals' — clears the approved state and returns to the
+  // pending approvals inbox. Stays in the Manager role (no Finance jump).
+  const backAppr=document.getElementById('backToApprovalsBtn');
+  if(backAppr) backAppr.onclick=()=>{ S.apprCleared=true; S.mgrView='approvals'; render(); };
+
+  // Budget approvals — finance sign-off
+  document.querySelectorAll('[data-budget-approve]').forEach(b=>{
+    b.onclick=()=>{ BUDGET_REQUESTS.find(r=>r.id===+b.dataset.budgetApprove).status='approved'; render(); };
+  });
+  document.querySelectorAll('[data-budget-reject]').forEach(b=>{
+    b.onclick=()=>{ BUDGET_REQUESTS.find(r=>r.id===+b.dataset.budgetReject).status='rejected'; render(); };
+  });
+
+  // Screen 1 — chat
+  const chip=document.getElementById('promptChip');
+  const input=document.getElementById('chatInput');
+  const send=document.getElementById('sendBtn');
+  const PROMPT='I need to be in Chicago Thu for the client review, back Fri evening.';
+  if(chip) chip.onclick=()=>sendMessage(PROMPT);
+  if(send) send.onclick=()=>sendMessage(input.value.trim()||PROMPT);
+  if(input) input.onkeydown=e=>{ if(e.key==='Enter') sendMessage(input.value.trim()||PROMPT); };
+  // Re-arm the "thinking" transition ONLY when the message was just sent and we
+  // have NOT yet advanced to the itinerary. If the user navigated Back to chat
+  // (chatAdvanced===true), do NOT auto-advance — let them re-send / edit.
+  if(S.role==='employee' && S.empStep===1 && S.chatSent && !S.chatAdvanced){
+    setTimeout(()=>go(()=>{ S.empStep=2; S.chatAdvanced=true; }), 1500);
+  }
+
+  // Screen 2 — book
+  const book=document.getElementById('bookBtn');
+  if(book) book.onclick=()=>go(()=>{ S.empStep=3; });
+  document.querySelectorAll('[data-selectalt]').forEach(b=>{
+    b.onclick=()=>go(()=>{ S.empStep=3; });
+  });
+  const reqApproval=document.getElementById('requestApprovalBtn');
+  if(reqApproval) reqApproval.onclick=()=>{ S.travelApprovalRequested=true; render(); };
+
+  // Screen 3 — review (appears after timer)
+  const review=document.getElementById('reviewBtn');
+  if(review) review.onclick=()=>go(()=>{ S.empStep=4; });
+
+  // Screen 4 — exception resolve
+  const rc=document.getElementById('resolveClient');
+  const rp=document.getElementById('resolvePersonal');
+  if(rc) rc.onclick=()=>resolveException();
+  if(rp) rp.onclick=()=>resolveException();
+  const submit=document.getElementById('submitBtn');
+  if(submit && !submit.disabled) submit.onclick=()=>{ S.submitted=true; S.sentBack=false; render(); };
+
+  // Screen 4 — snap a receipt (out-of-pocket, no card/email trail)
+  const snapBtn=document.getElementById('snapBtn');
+  if(snapBtn) snapBtn.onclick=()=>{
+    S.snapStep=1; render();
+    snapTimer=setTimeout(()=>{
+      S.snapStep=2; render();
+      snapTimer=setTimeout(()=>{ S.snapStep=3; render(); }, 1300);
+    }, 900);
+  };
+  const snapConfirm=document.getElementById('snapConfirmBtn');
+  if(snapConfirm) snapConfirm.onclick=()=>{
+    LINE_ITEMS.push({
+      n:LINE_ITEMS.length+1, date:SNAP_CANDIDATE.date, merchant:SNAP_CANDIDATE.merchant,
+      sub:SNAP_CANDIDATE.sub, cat:SNAP_CANDIDATE.cat, gl:SNAP_CANDIDATE.gl,
+      amt:SNAP_CANDIDATE.amt, src:'snap', ok:true
+    });
+    TRIP.total = LINE_ITEMS.reduce((a,it)=>a+it.amt,0);
+    S.snapAdded=true; S.snapStep=0;
+    render();
+  };
+  const snapCancel=document.getElementById('snapCancelBtn');
+  if(snapCancel) snapCancel.onclick=()=>{ S.snapStep=0; render(); };
+
+  // Screen 5 — approve
+  const approve=document.getElementById('approveBtn');
+  if(approve) approve.onclick=()=>{ S.approved=true; render(); };
+  const sendback=document.getElementById('sendbackBtn');
+  if(sendback) sendback.onclick=()=>{ S.sentBack=true; S.submitted=false; S.exceptionResolved=false; render(); };
+
+  // Trip-watch timer
+  if(S.role==='employee' && S.empStep===3){
+    const slot=document.getElementById('notifSlot');
+    const step=document.getElementById('assembleStep');
+    watchTimer=setTimeout(()=>{
+      if(step){ step.classList.remove('pending'); step.classList.add('done');
+        step.querySelector('.wtick').innerHTML=svg('checkSm'); }
+      if(slot){ slot.innerHTML=notifCard();
+        const rb=document.getElementById('reviewBtn');
+        if(rb) rb.onclick=()=>go(()=>{ S.empStep=4; });
+      }
+    }, 2200);
+  }
+}
+
+function sendMessage(text){
+  // Allow re-send when the user has navigated Back to chat (chatAdvanced).
+  if(S.chatSent && !S.chatAdvanced) return;
+  S.chatSent=true;
+  S.chatAdvanced=false;
+  S.chatText=text;
+  const win=document.getElementById('chatWindow');
+  win.innerHTML='';
+  // user bubble
+  const u=document.createElement('div');
+  u.className='bubble user';
+  u.innerHTML='<div class="avatar user">A</div><div class="bubble-body">'+text+'</div>';
+  win.appendChild(u);
+  // thinking
+  const t=document.createElement('div');
+  t.className='bubble agent';
+  t.innerHTML='<div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body"><div class="thinking"><i></i><i></i><i></i></div></div>';
+  win.appendChild(t);
+  setTimeout(()=>go(()=>{ S.empStep=2; S.chatAdvanced=true; }), 1500);
+}
+
+function resolveException(){
+  S.exceptionResolved=true;
+  render();
+}
+
+function newTripReset(){
+  // Before resetting, ARCHIVE the current trip into the Expense Agent's
+  // "Already handled" history so it doesn't vanish when a new trip is booked.
+  // Only archive if the trip actually reached the report stage (empStep 4).
+  if(S.empStep===4){
+    const status = S.approved ? 'Approved'
+                 : S.sentBack ? 'Sent back'
+                 : S.submitted ? 'Awaiting approval'
+                 : 'Draft';
+    // Prepend so the most-recent handled trip shows first.
+    PAST_REPORTS.unshift({ name:TRIP.name, dates:TRIP.dates, total:TRIP.total, status:status });
+  }
+  // Reset the employee travel+expense journey back to a fresh chat so the user
+  // can book another trip. Keeps role=employee; does NOT touch manager/finance.
+  S.role='employee'; S.empStep=1; S.view='main';
+  S.chatSent=false; S.chatAdvanced=false; S.chatText='';
+  S.exceptionResolved=false; S.submitted=false; S.approved=false; S.apprCleared=false; S.sentBack=false;
+  S.expPreview=false; S.snapStep=0; S.snapAdded=false; S.travelApprovalRequested=false;
+  LINE_ITEMS.length=ORIGINAL_ITEM_COUNT; TRIP.total=ORIGINAL_TOTAL;
+  NAV_HISTORY.length=0;
+  render();
+}
+
+function restart(){
+  S.role='employee'; S.empStep=1; S.chatSent=false; S.chatText='';
+  S.exceptionResolved=false; S.submitted=false; S.approved=false; S.apprCleared=false; S.sentBack=false;
+  S.tipsSeen={}; S.activeTip=null; // re-arm one-time tips (they show again only if the toggle is ON)
+  S.view='main'; S.expPreview=false; S.mgrView='approvals'; S.finView='orgspend';
+  S.snapStep=0; S.snapAdded=false; S.travelApprovalRequested=false;
+  LINE_ITEMS.length=ORIGINAL_ITEM_COUNT; TRIP.total=ORIGINAL_TOTAL;
+  S.chatAdvanced=false;
+  PAST_REPORTS.length=0; ORIGINAL_PAST_REPORTS.forEach(r=>PAST_REPORTS.push(JSON.parse(JSON.stringify(r))));
+  BUDGET_REQUESTS[0].status='pending'; BUDGET_REQUESTS[1].status='pending'; BUDGET_REQUESTS[2].status='approved';
+  NAV_HISTORY.length=0;
+  render();
+}
+
+document.getElementById('restartBtn').onclick=restart;
+document.getElementById('backBtn').onclick=goBack;
+
+// ---------- Tooltip engine (6 one-time tips, master toggle) ----------
+// Order & context of the 6 tips:
+//  role     — #1 role switcher (first load)
+//  restart  — #6 restart button (after #1)
+//  expense  — #2 Employee > Expense Agent sub-tab
+//  teamspend— #3 Manager > Team Spend sub-tab
+//  budgets  — #4 Finance > Budget Approvals sub-tab
+//  roi      — #5 Finance > Agent ROI sub-tab (after #4)
+function candidateTip(){
+  // Returns the id of the tooltip that SHOULD show for the current screen, or null.
+  // KEY: sub-tab tooltips fire BEFORE the user clicks the tab — they point at a
+  // sub-view the user has NOT yet opened, inviting the click. So each is gated on
+  // being in that role but still on that role's DEFAULT sub-view.
+  if(!S.tipsOn) return null;
+
+  if(S.role==='employee'){
+    // First load intro on the chat screen: #1 role, then #6 restart (staggered).
+    if(S.view==='main' && S.empStep===1){
+      if(!S.tipsSeen.role) return 'role';
+      if(!S.tipsSeen.restart) return 'restart';
+    }
+    // #2 Expense Agent — show while NOT yet in the hub (invites the click).
+    // Only after the intro pair (#1/#6) has been seen, so the first screen isn't crowded.
+    if(S.view!=='expenseHub' && S.tipsSeen.role && S.tipsSeen.restart && !S.tipsSeen.expense) return 'expense';
+  }
+
+  if(S.role==='manager'){
+    // #3 Team Spend — show while on the default Approvals view (invites the click).
+    if(S.mgrView!=='teamspend' && !S.tipsSeen.teamspend) return 'teamspend';
+  }
+
+  if(S.role==='finance'){
+    // #4 Budget Approvals then #5 Agent ROI — sequential, shown while on the
+    // default Org Spend view (each invites its click), #4 must be seen before #5.
+    if(S.finView!=='budgets' && !S.tipsSeen.budgets) return 'budgets';
+    if(S.finView!=='roi' && S.tipsSeen.budgets && !S.tipsSeen.roi) return 'roi';
+  }
+  return null;
+}
+function tipEngine(){
+  const next = candidateTip();
+  S.activeTip = next;
+  renderRoles();       // toggles role/restart bubble visibility
+  // Always re-render the pipeline so any previously-drawn sub-nav bubble is
+  // cleared (e.g. after the × is clicked) and a new one is drawn only if the
+  // current tip is a sub-nav tip. Re-rendering here is cheap and idempotent.
+  renderPipeline();
+}
+function dismissTip(){
+  if(S.activeTip){ S.tipsSeen[S.activeTip]=true; }
+  tipEngine();  // re-evaluate; may reveal the next staggered/sequential tip
+}
+document.getElementById('roleTipClose').onclick=dismissTip;
+document.getElementById('restartTipClose').onclick=dismissTip;
+
+// Master toggle: OFF hides everything immediately; ON re-arms unseen tips for this screen.
+document.getElementById('tipsToggle').onclick=(e)=>{
+  S.tipsOn = e.target.checked;
+  if(!S.tipsOn){ S.activeTip=null; renderRoles(); renderPipeline(); }
+  else { tipEngine(); }
+};
+
+function goToStage(key){
+  // Each tab's ribbon only ever switches sub-views within that tab — it never jumps persona.
+  go(()=>{
+    if(key==='travel'){ S.view='main'; if(S.empStep>2) S.empStep=2; }
+    else if(key==='expense'){ S.view='expenseHub'; }
+    else if(key==='approvals'){ S.mgrView='approvals'; }
+    else if(key==='teamspend'){ S.mgrView='teamspend'; }
+    else if(key==='orgspend'){ S.finView='orgspend'; }
+    else if(key==='budgets'){ S.finView='budgets'; }
+    else if(key==='roi'){ S.finView='roi'; }
+  });
+}
+
+// init
+render();
+</script>
+
+</body></html>
