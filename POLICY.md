@@ -20,8 +20,8 @@ everything else auto-clears with no one having to look at it.
   (long airport transfer, multi-day rental, etc.) explains the amount.
 
 ## Meals — GL 6040
-- Meals are covered up to **$750 per person, per meal**, tip included.
-- A meal over $750 is flagged **unless** it's reclassified as Client
+- Meals are covered up to **$75 per person, per meal**, tip included.
+- A meal over $75 is flagged **unless** it's reclassified as Client
   entertainment (GL 6045) with attendees documented.
 
 ## Client entertainment — GL 6045
