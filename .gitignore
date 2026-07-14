@@ -1,0 +1,10 @@
+# Secrets / local env — never commit these
+.env
+.env.*
+.vercel
+
+# Dependencies
+node_modules/
+
+# OS cruft
+.DS_Store

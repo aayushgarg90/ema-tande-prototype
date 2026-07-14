@@ -551,6 +551,55 @@ a { color: var(--color-link, var(--color-primary)); }</style>
   .thinking i:nth-child(3){animation-delay:.4s}
   @keyframes blink{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 
+  /* API-key bar (browser-direct Claude access) */
+  .apikey-bar{
+    max-width:720px;margin:0 auto 10px;background:var(--agent-tint);border:1px solid #CFE6D2;
+    border-radius:13px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;
+  }
+  .apikey-bar .ab-head{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:650;color:var(--primary-deep)}
+  .apikey-bar .ab-head svg{width:15px;height:15px;color:var(--agent)}
+  .apikey-bar p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.5}
+  .apikey-row{display:flex;gap:8px}
+  .apikey-row input{
+    flex:1;padding:10px 13px;border-radius:10px;border:1px solid var(--line);background:#fff;
+    font-size:13px;font-family:inherit;color:var(--ink);
+  }
+  .apikey-row input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-tint)}
+  .apikey-row button{
+    padding:10px 16px;border-radius:10px;background:var(--primary);color:#fff;font-size:13px;font-weight:600;flex:0 0 auto;
+  }
+  .apikey-ok{font-size:11px;color:var(--agent);font-weight:600;display:flex;align-items:center;gap:5px}
+  .apikey-ok svg{width:13px;height:13px}
+  .apikey-ok button{background:none;color:var(--muted);font-size:11px;text-decoration:underline;padding:0;margin-left:auto}
+
+  /* In-chat trip form — fills as the agent collects details */
+  .tripform{
+    border:1px solid var(--line-2);border-radius:13px;padding:14px 16px;background:var(--surface-2);
+    display:flex;flex-direction:column;gap:12px;animation:rise .3s ease both;
+  }
+  .tf-head{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+  .tf-head svg{width:15px;height:15px;color:var(--agent)}
+  .tf-head .tf-count{margin-left:auto;font-size:11px;font-weight:600;color:var(--muted)}
+  .tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .tf-field{
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;display:flex;flex-direction:column;gap:2px;
+    transition:border-color .2s,background .2s;
+  }
+  .tf-field.filled{border-color:#CFE6D2;background:var(--agent-tint)}
+  .tf-field:focus-within{border-color:var(--agent)}
+  .tf-field .tf-k{font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .tf-field .tf-v{
+    font:inherit;font-size:13px;font-weight:600;color:var(--ink);border:none;background:transparent;padding:0;width:100%;outline:none;
+  }
+  .tf-field.empty .tf-v{color:var(--ink);font-weight:500}
+  .tf-field .tf-v::placeholder{color:var(--muted);font-weight:500}
+  .tf-book{
+    width:100%;padding:12px;border-radius:11px;background:var(--agent);color:#fff;font-size:13.5px;font-weight:650;
+    display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px -6px var(--agent-glow);
+  }
+  .tf-book svg{width:16px;height:16px}
+  .tf-book:disabled{background:var(--line-2);color:var(--muted);box-shadow:none;cursor:not-allowed}
+
   .composer{border-top:1px solid var(--line-2);padding:14px 16px;display:flex;flex-direction:column;gap:11px}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{
@@ -675,6 +724,13 @@ a { color: var(--color-link, var(--color-primary)); }</style>
   .src.email{background:#E7F1FF;color:#2563C9}
   .src.snap{background:#EAF7EE;color:#178A4E}
   .cat-pill{font-size:11.5px;color:var(--ink-2)}
+  .data-tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+  .data-tag.live{background:#EAF7EE;color:#178A4E}
+  .data-tag.live i{width:6px;height:6px;border-radius:50%;background:#178A4E;display:inline-block}
+  .data-tag.demo{background:var(--surface-2);color:var(--muted)}
+  .data-tag.demo i{width:6px;height:6px;border-radius:50%;background:var(--muted);display:inline-block}
+  .data-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin:10px 0 2px}
+  .data-legend span{display:inline-flex;align-items:center;gap:6px}
   .row-ok .stat{color:var(--success)}
   .stat{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600}
   .stat svg{width:13px;height:13px}
@@ -703,6 +759,10 @@ a { color: var(--color-link, var(--color-primary)); }</style>
   .report-foot{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--line-2);flex-wrap:wrap}
   .report-foot .rf-note{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:7px}
   .report-foot .rf-note svg{width:14px;height:14px;color:var(--agent)}
+  .submitted-status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:650;padding:10px 2px}
+  .submitted-status svg{width:16px;height:16px;flex:0 0 auto}
+  .submitted-status.status-approved{color:var(--success)}
+  .submitted-status.status-pending{color:var(--agent)}
 
   /* ---------- Snap-a-receipt (out-of-pocket capture) ---------- */
   .snap-card{max-width:900px;margin:16px auto 0;padding:18px 20px}
@@ -723,6 +783,9 @@ a { color: var(--color-link, var(--color-primary)); }</style>
   .snap-field span:last-child{font-weight:600;color:var(--ink)}
   .snap-done{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--success);font-weight:600}
   .snap-done svg{width:16px;height:16px;flex:0 0 auto}
+
+  /* ---------- Inbox receipts (real IMAP scan) ---------- */
+  .inbox-card{margin-top:12px}
 
   /* ---------- Expense Hub (Expense Agent digest) ---------- */
   .exp-hub{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:0 auto}
@@ -933,8 +996,15 @@ a { color: var(--color-link, var(--color-primary)); }</style>
 
 <script>
 /* ============================================================
-   Ema Travel & Expense Agent — scripted prototype
-   Front-end only. All data mocked. No backend / no LLM calls.
+   Ema Travel & Expense Agent — prototype
+   Run via `node server.js` (see server.js + package.json).
+   Step 1: the chat (screen 1) calls Claude on every message via /api/chat —
+     one directed conversation, no intent classification — to collect the
+     minimum trip details.
+   Step 2: once ready, the Travel Agent fires a real flight search via
+     Kiwi.com's MCP server (/api/search-flights). Hotel is a placeholder —
+     Kiwi's MCP only covers flights. Everything from trip-watch onward is
+     still the scripted demo.
    ============================================================ */
 
 // ---------- Icons (inline, feather-style) ----------
@@ -982,36 +1052,45 @@ const ORG_REPORTS = [
   { who:'Nilesh R.', trip:'Bangalore', dates:'May 5–8, 2026' }
 ];
 
+// `live` marks whether a line item's data actually came from a real source in
+// this session (the booked flight/hotel, or a snapped/inbox receipt) vs.
+// simulated demo content. Items 1-2 flip to live:true once generateReport()
+// runs; snapped/inbox receipts are pushed with live:true at capture time.
+//
+// `flag`/`evaluated`/`resolved`: whether an item is a policy exception is
+// decided for real by /api/evaluate-report (see evaluateReport() below) —
+// against the actual merchant/category/amount, whatever they turn out to be
+// this session. `evaluated` guards against re-asking about an item that's
+// already been judged (or already resolved) every time a new item is added.
+// Item 3 (the dinner) ships with a scripted `flag` as a fallback ONLY — it's
+// overwritten by the real policy check like everything else; it's kept in
+// the baseline purely so a fresh demo still has a plausible exception to show
+// even if the evaluate-report call fails.
 const LINE_ITEMS = [
-  {n:1, date:'Jul 16', merchant:'United 1198 — SEA ⇄ ORD', sub:'Round trip · 7:10a out / 6:45p back', cat:'Airfare',          gl:'6010', amt:842, src:'corp',  ok:true},
-  {n:2, date:'Jul 16', merchant:'Kimpton Gray — Chicago',    sub:'2 nights · 0.3 mi from client office', cat:'Lodging',      gl:'6020', amt:896, src:'corp',  ok:true},
-  {n:3, date:'Jul 16', merchant:'Hertz rental car',          sub:'2 days · compact', cat:'Ground transport',                 gl:'6030', amt:192, src:'corp',  ok:true},
-  {n:4, date:'Jul 16', merchant:'Uber — SEA airport → home', sub:'Return leg', cat:'Ground transport',                        gl:'6030', amt:48,  src:'email', ok:true},
-  {n:5, date:'Jul 16', merchant:'Uber — ORD → hotel',        sub:'Arrival leg', cat:'Ground transport',                       gl:'6030', amt:64,  src:'email', ok:true},
-  {n:6, date:'Jul 16', merchant:'Lunch — RPM Steak bar',     sub:'Working lunch', cat:'Meals',                                gl:'6040', amt:58,  src:'corp',  ok:true},
-  {n:7, date:'Jul 17', merchant:'Coffee / snacks',           sub:'Intelligentsia', cat:'Meals',                               gl:'6040', amt:22,  src:'snap',  ok:true},
-  {n:8, date:'Jul 16', merchant:'Cash taxi + tip',           sub:'Late-night return', cat:'Ground transport',                 gl:'6030', amt:38,  src:'snap',  ok:true},
-  {n:9, date:'Jul 16', merchant:'Steakhouse dinner',         sub:'Bavette’s', cat:'Meals',                                    gl:'6040', amt:180, src:'corp',  ok:false,
+  {n:1, date:'Jul 16', merchant:'United 1198 — SEA ⇄ ORD', sub:'Round trip · 7:10a out / 6:45p back', cat:'Airfare',          gl:'6010', amt:842, src:'corp',  live:false, evaluated:false, flag:null, resolved:false},
+  {n:2, date:'Jul 16', merchant:'Kimpton Gray — Chicago',    sub:'2 nights · 0.3 mi from client office', cat:'Lodging',      gl:'6020', amt:896, src:'corp',  live:false, evaluated:false, flag:null, resolved:false},
+  {n:3, date:'Jul 16', merchant:'Steakhouse dinner',         sub:'Bavette’s', cat:'Meals',                                    gl:'6040', amt:180, src:'corp',  live:false, evaluated:false, resolved:false,
        flag:'Over $75 dinner limit · no attendees listed'}
 ];
 
 const SRC_META = {
   corp:  {label:'Corp card • auto', icon:'card'},
-  email: {label:'Email receipt',    icon:'mail'},
+  email: {label:'Inbox • found',    icon:'mail'},
   snap:  {label:'Snapped',          icon:'camera'}
 };
 
-// Baseline to restore on restart — LINE_ITEMS/TRIP.total get mutated when a
-// manually-snapped out-of-pocket item is added.
-const ORIGINAL_ITEM_COUNT = LINE_ITEMS.length;
+// Baseline to restore on restart — LINE_ITEMS gets mutated freely during a
+// session (items 1-2 overwritten by generateReport(), a snapped receipt
+// pushed on, the dinner exception possibly spliced out entirely), so reset
+// rebuilds the whole array from this deep-cloned snapshot rather than trying
+// to undo each mutation individually.
 const ORIGINAL_TOTAL = TRIP.total;
-
-// The expense the agent has zero visibility into: no corp-card swipe, no
-// email trail. This is what the "snap a receipt" flow extracts and adds.
-const SNAP_CANDIDATE = {
-  merchant:'Blue Bottle Coffee', sub:'123 Market Street · paid cash', cat:'Meals', gl:'6040', amt:19.60, date:'Jul 17'
-};
-const RECEIPT_IMG = 'data:image/jpeg;base64,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';
+const ORIGINAL_LINE_ITEMS_ALL = LINE_ITEMS.map(it => Object.assign({}, it));
+function resetLineItems(){
+  LINE_ITEMS.length = 0;
+  ORIGINAL_LINE_ITEMS_ALL.forEach(it => LINE_ITEMS.push(Object.assign({}, it)));
+  TRIP.total = ORIGINAL_TOTAL;
+}
 
 // Other trips the Expense Agent has touched — feeds the Expense Hub digest
 const READY_REPORT = {
@@ -1022,7 +1101,68 @@ const PAST_REPORTS = [
   { name:'Denver · Partner summit',    dates:'May 18–19, 2026', total:980, status:'Reimbursed' },
   { name:'NYC · Quarterly planning',   dates:'Apr 9–10, 2026',  total:612, status:'Reimbursed' }
 ];
-const ORIGINAL_PAST_REPORTS = JSON.parse(JSON.stringify(PAST_REPORTS));  // restore on full restart (newTripReset archives into PAST_REPORTS)
+const ORIGINAL_PAST_REPORTS = JSON.parse(JSON.stringify(PAST_REPORTS));  // restore on full restart
+
+// Up to 3 real trips tracked at once, each with its own full report (not just
+// a flattened summary) — TRIP/LINE_ITEMS/S.{submitted,...} above are the
+// "live" working copy of whichever one is currently open (S.activeTripId).
+// saveActiveTrip()/loadTrip() sync between the two so switching trips (or the
+// Manager tab acting on a trip that isn't the one currently open) never
+// loses a report.
+const TRIPS = [];
+
+// Whether a report is ready to submit is DERIVED from its own line items,
+// not a separate boolean to keep in sync — an item only blocks submission
+// while it's flagged (by the real /api/evaluate-report policy check) and not
+// yet resolved.
+function itemsResolved(items){
+  return items.every(it => !it.flag || it.resolved);
+}
+
+function currentTripSnapshot(){
+  return {
+    id: S.activeTripId, name: TRIP.name, dates: TRIP.dates, total: TRIP.total,
+    lineItems: LINE_ITEMS.map(it => Object.assign({}, it)),
+    approvalSummary: S.approvalSummary, approvalRecommendation: S.approvalRecommendation,
+    submitted: S.submitted, approved: S.approved, sentBack: S.sentBack
+  };
+}
+function saveActiveTrip(){
+  if(!S.activeTripId) return; // nothing booked yet this session
+  const snap = currentTripSnapshot();
+  const i = TRIPS.findIndex(t => t.id === S.activeTripId);
+  if(i>=0) TRIPS[i]=snap; else TRIPS.push(snap);
+}
+function loadTrip(id){
+  const t = TRIPS.find(x => x.id===id);
+  if(!t) return;
+  TRIP.name=t.name; TRIP.dates=t.dates; TRIP.total=t.total;
+  LINE_ITEMS.length=0; t.lineItems.forEach(it => LINE_ITEMS.push(Object.assign({}, it)));
+  S.approvalSummary=t.approvalSummary; S.approvalRecommendation=t.approvalRecommendation;
+  S.submitted=t.submitted; S.approved=t.approved; S.sentBack=t.sentBack;
+  S.activeTripId=id;
+}
+function tripStage(t){
+  if(t.approved) return 'approved';
+  if(t.sentBack) return 'changes';
+  if(t.submitted) return 'submitted';
+  if(itemsResolved(t.lineItems)) return 'ready';
+  return 'attention';
+}
+// The 3-trip cap is a deliberate demo limit, not an arbitrary bug: once 3 are
+// tracked, the oldest ALREADY-APPROVED one rolls off into the flat PAST_REPORTS
+// archive to make room. If all 3 are still open, there's nothing safe to bump
+// (that's the exact data loss this was built to prevent), so a new trip can't
+// start until one is resolved.
+function makeRoomForNewTrip(){
+  if(TRIPS.length < 3) return true;
+  const i = TRIPS.findIndex(t => t.approved);
+  if(i<0) return false;
+  const t = TRIPS[i];
+  PAST_REPORTS.unshift({ name:t.name, dates:t.dates, total:t.total, status:'Approved' });
+  TRIPS.splice(i,1);
+  return true;
+}
 
 // ---------- Manager tab: team spend ----------
 const TEAM_MEMBERS = [
@@ -1073,11 +1213,32 @@ const S = {
   chatSent:false,
   chatAdvanced:false,   // true once chat -> itinerary timer has fired; guards the re-arm so Back-to-chat stays on chat
   chatText:'',
-  exceptionResolved:false,
+  // ---- Step 1: booking chat (every message calls Claude via /api/chat) ----
+  chatMessages:[],      // display bubbles: {who:'user'|'agent', text}
+  chatHistory:[],       // Claude API messages: {role, content}
+  trip:{},              // collected slots: origin, destination, departDate, returnDate, purpose, travelers
+  tripReady:false,      // all required trip fields present (via chat or direct form edits)
+  chatBusy:false,       // awaiting a Claude response
+  chatError:'',
+  formEditsPending:new Set(), // trip fields hand-edited since the last message sent to Claude
+  // ---- Step 2: Travel Agent (real Kiwi.com flight search via /api/search-flights) ----
+  flightStatus:'idle',  // 'idle' | 'loading' | 'done' | 'error'
+  flights:[],            // top 3 results from Kiwi MCP
+  hotel:null,             // placeholder hotel suggestion (not from Kiwi — see server.js)
+  flightNote:'',
+  flightError:'',
+  chosenFlightId:null,
+  evaluating:false,          // an /api/evaluate-report call is in flight
+  approvalSummary:'',        // Claude's manager-facing summary of the active trip's report
+  approvalRecommendation:null, // 'approve' | 'review' — Claude's real recommendation
+  mgrRefreshing:false,       // manager-triggered re-check (POLICY.md may have changed) in flight
+  mgrRefreshError:'',
   sentBack:false,
   submitted:false,
   approved:false,
-  apprCleared:false,   // true once manager has approved AND returned to queue -> request removed, empty state shown
+  activeTripId:null,   // id of the trip currently loaded into TRIP/LINE_ITEMS/the fields above — see TRIPS
+  mgrConfirm:null,     // {kind:'approved'|'sentBack', name, dates} — one-time confirmation after a manager action
+  tripCapNotice:false, // one-shot: shown once when "New trip" is blocked by the 3-trip cap, then auto-clears
   tipsOn:true,         // master toggle (next to Restart). OFF = no tooltips at all.
   tipsSeen:{},         // which of the 6 tooltips have been shown/dismissed this run
   activeTip:null,      // the tooltip id currently visible (only one at a time)
@@ -1085,12 +1246,21 @@ const S = {
   expPreview:false,
   mgrView:'approvals', // 'approvals' or 'teamspend' (manager only)
   finView:'orgspend',  // 'orgspend', 'budgets', or 'roi' (finance only)
-  snapStep:0,          // 0 idle · 1 uploading · 2 extracting · 3 confirm — the "snap a receipt" capture flow
+  snapStep:0,          // 0 idle · 1 reading (real Claude vision call) · 2 error · 3 confirm
+  snapImage:null,      // data URL of the actual captured/uploaded receipt photo
+  snapExtracted:null,  // {merchant, amount, currency, date, category, gl} from /api/extract-receipt
+  snapError:'',
   snapAdded:false,
+  // ---- Inbox receipts: real IMAP scan of a Gmail inbox (/api/check-inbox) ----
+  inboxChecking:false,
+  inboxChecked:false,   // at least one check has completed this trip
+  inboxScanned:0,       // how many new emails had a matching subject on the last check
+  inboxLastAdded:[],    // LINE_ITEMS entries added by the most recent check
+  inboxError:'',
   travelApprovalRequested:false
 };
 let watchTimer=null;
-let snapTimer=null;
+let reportPromise=null; // the in-flight /api/generate-report call, kicked off when a trip is booked
 
 // ---------- Back navigation (up to 6 pages) ----------
 const NAV_HISTORY=[];
@@ -1201,34 +1371,78 @@ function renderRoles(){
 // ============================================================
 //  SCREENS
 // ============================================================
-function screenChat(){
-  const chat = (S.chatSent && !S.chatAdvanced)
-    ? '<div class="chat-window" id="chatWindow">'
-      + '<div class="bubble user"><div class="avatar user">A</div><div class="bubble-body">'+S.chatText+'</div></div>'
-      + '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body"><div class="thinking"><i></i><i></i><i></i></div></div></div>'
-      + '</div>'
-    : (S.chatSent && S.chatAdvanced)
-    ? '<div class="chat-window" id="chatWindow">'
-      + '<div class="bubble user"><div class="avatar user">A</div><div class="bubble-body">'+S.chatText+'</div></div>'
-      + '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body">Ready when you are — send this again to see your itinerary, or edit it to plan a different trip.</div></div>'
-      + '</div>'
-    : '<div class="chat-window" id="chatWindow">'
-      + '<div class="chat-empty">'
+// ---- fields the chatbot collects before the Travel Agent can search ----
+// req:true fields are the minimum needed to book (flights + hotel). The bot
+// asks for them in this order. Purpose is optional (policy context only).
+const TRIP_FIELDS = [
+  {k:'destination', label:'To',        req:true},
+  {k:'origin',      label:'From',      req:true},
+  {k:'departDate',  label:'Depart',    req:true},
+  {k:'returnDate',  label:'Return',    req:true},
+  {k:'travelers',   label:'Travelers', req:true},
+  {k:'purpose',     label:'Purpose',   req:false}
+];
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function chatWindowHTML(){
+  let inner='';
+  if(!S.chatMessages.length){
+    inner = '<div class="chat-empty">'
       +   '<div class="halo">'+svg('compass')+'</div>'
       +   '<b>Where do you need to go?</b>'
-      +   '<p>Tell the Travel Agent your trip in plain language. It handles search, policy, and booking.</p>'
-      + '</div></div>';
+      +   '<p>Tell the Travel Agent your trip in plain language. It asks for anything it still needs, then books.</p>'
+      + '</div>';
+  } else {
+    S.chatMessages.forEach(m=>{
+      if(m.who==='user'){
+        inner += '<div class="bubble user"><div class="avatar user">A</div><div class="bubble-body">'+esc(m.text)+'</div></div>';
+      } else {
+        inner += '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body">'+esc(m.text)+'</div></div>';
+      }
+    });
+  }
+  if(S.chatBusy){
+    inner += '<div class="bubble agent"><div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body"><div class="thinking"><i></i><i></i><i></i></div></div></div>';
+  }
+  return '<div class="chat-window" id="chatWindow">'+inner+'</div>';
+}
+
+function tripFormHTML(){
+  const reqFields = TRIP_FIELDS.filter(f=>f.req);
+  const required = reqFields.length;
+  const filled = reqFields.filter(f=>S.trip[f.k]).length;
+  let cells='';
+  TRIP_FIELDS.forEach(f=>{
+    const val = S.trip[f.k];
+    cells += '<label class="tf-field '+(val?'filled':'empty')+'" data-field="'+f.k+'">'
+      + '<span class="tf-k">'+f.label+'</span>'
+      + '<input class="tf-v" type="text" data-trip-field="'+f.k+'" value="'+esc(val||'')+'" placeholder="'+(f.req?'Required':'Optional')+'" autocomplete="off" />'
+      + '</label>';
+  });
+  const ready = S.tripReady;
+  return '<div class="tripform">'
+    + '<div class="tf-head">'+svg('sparkle')+'Trip details <span style="font-weight:500;color:var(--muted)">(you can edit these directly)</span><span class="tf-count" id="tfCount">'+Math.min(filled,required)+'/'+required+' captured</span></div>'
+    + '<div class="tf-grid">'+cells+'</div>'
+    + '<button class="tf-book" id="bookTripBtn"'+(ready?'':' disabled')+'>'+svg('check')+'<span id="tfBookLabel">'+(ready?'Find flights &amp; hotel':'Answer the questions above to continue')+'</span></button>'
+    + '</div>';
+}
+
+function screenChat(){
+  const showForm = S.chatMessages.length>0;
 
   return ''
   + '<h2 class="screen-title">Plan a trip</h2>'
-  + '<p class="screen-sub">Today, travel is <b>employee-triggered</b>: state your intent once and the agent takes it from there. Next: the Travel Agent will read your emails and Slack messages to spot a trip before you do — surfacing recommended options right in this chat to get you started.</p>'
+  + '<p class="screen-sub">Tell the Travel Agent your trip in plain language. It fills in the details below, asks about anything missing, and books once it has everything.</p>'
   + '<div class="chat-label">'+svg('bot')+'Chat with your Travel Agent</div>'
   + '<div class="card chat-shell">'
-  +   chat
+  +   chatWindowHTML()
+  +   (showForm ? '<div style="padding:0 16px 4px">'+tripFormHTML()+'</div>' : '')
   +   '<div class="composer">'
   +     '<div class="chips">'
-  +       '<button class="chip" id="promptChip">“I need to be in Chicago Thu for the client review, back Fri evening.”</button>'
+  +       '<button class="chip" id="promptChip" data-prompt="I need to be in Chicago Thursday for a client review, flying from Seattle, back Friday evening.">“I need to be in Chicago Thu for the client review, back Fri evening.”</button>'
   +     '</div>'
+  +     (S.chatError ? '<div style="font-size:11.5px;color:var(--danger,#d33);font-weight:600">'+esc(S.chatError)+'</div>' : '')
   +     '<div class="composer-row">'
   +       '<input id="chatInput" type="text" placeholder="Where do you need to go?" autocomplete="off" />'
   +       '<button class="send-btn" id="sendBtn" aria-label="Send">'+svg('send')+'</button>'
@@ -1237,44 +1451,84 @@ function screenChat(){
   + '</div>';
 }
 
+// Step 2 screen: the Travel Agent fires a real Kiwi.com search (via server.js,
+// MCP-connected) and shows the top 3 flights + a hotel. No mock ITINERARY data.
 function screenItinerary(){
+  const t=S.trip;
+  const parsedBanner = (t.origin||t.destination)
+    ? '<div class="apikey-bar" style="max-width:none;margin-bottom:16px">'
+      + '<div class="ab-head">'+svg('sparkle')+'Parsed from your chat</div>'
+      + '<p style="color:var(--primary-deep);font-weight:600">'
+      +   (t.origin?esc(t.origin):'—')+' → '+(t.destination?esc(t.destination):'—')
+      +   ((t.departDate||t.returnDate)?' &nbsp;·&nbsp; '+esc([t.departDate,t.returnDate].filter(Boolean).join(' – ')):'')
+      +   (t.purpose?' &nbsp;·&nbsp; '+esc(t.purpose):'')
+      + '</p></div>'
+    : '';
+
+  if(S.flightStatus==='loading'){
+    return ''
+    + '<h2 class="screen-title">Finding your flights &amp; hotel</h2>'
+    + '<p class="screen-sub">The Travel Agent is searching live flights via Kiwi.com for your trip.</p>'
+    + parsedBanner
+    + '<div class="card" style="max-width:760px;margin:0 auto;padding:24px;display:flex;align-items:center;gap:12px">'
+    +   '<div class="thinking"><i></i><i></i><i></i></div>'
+    +   '<span style="font-size:13.5px;color:var(--muted)">Searching Kiwi.com for the best flights…</span>'
+    + '</div>';
+  }
+
+  if(S.flightStatus==='error'){
+    return ''
+    + '<h2 class="screen-title">Finding your flights &amp; hotel</h2>'
+    + parsedBanner
+    + '<div class="card" style="max-width:760px;margin:0 auto;padding:20px">'
+    +   '<p style="color:#c0392b;font-weight:600;margin-bottom:12px">'+esc(S.flightError)+'</p>'
+    +   '<button class="btn btn-primary" id="retrySearchBtn">'+svg('arrowRight')+'Try again</button>'
+    + '</div>';
+  }
+
+  // done — real flights + hotel
   let opts='';
-  ITINERARY.forEach(o=>{
-    let legs='';
-    o.legs.forEach(l=>{
-      legs+='<div class="leg"><div class="lic">'+svg(l.icon)+'</div>'
-          + '<div class="ldesc"><b>'+l.b+'</b><span>'+l.s+'</span></div>'
-          + '<div class="lprice">'+(l.p>0?fmt(l.p):'—')+'</div></div>';
-    });
-    const policy = o.ok
-      ? '<span class="pill ok">'+svg('check')+'In policy</span>'
-      : '<span class="pill flag">'+svg('alert')+o.flag+'</span>';
-    const approvalNote = (!o.ok && S.travelApprovalRequested)
-      ? '<div class="rf-note" style="padding:0 18px 16px;margin-top:-6px">'+svg('sparkle')+'Sent to your manager — you’ll be notified if it’s approved, no need to check back.</div>'
-      : '';
-    opts+='<div class="card opt'+(o.tag==='rec'?' recommended':'')+'">'
-        + '<div class="opt-head">'
-        +   '<span class="opt-tag '+(o.tag==='rec'?'rec':'alt')+'">'+o.label+'</span>'
-        +   policy
-        + '</div>'
-        + legs
-        + '<div class="opt-foot">'
-        +   '<div class="opt-total">Booked total<b>'+fmt(o.total)+'</b></div>'
-        +   (o.tag==='rec'
-              ? '<button class="btn btn-primary" id="bookBtn">'+svg('check')+'Book trip</button>'
-              : (o.ok ? '<button class="btn btn-ghost" data-selectalt>Select</button>'
-                      : (S.travelApprovalRequested
-                          ? '<button class="btn btn-ghost" disabled style="opacity:.6;cursor:not-allowed">'+svg('clock')+'Awaiting manager approval</button>'
-                          : '<button class="btn btn-ghost" id="requestApprovalBtn">'+svg('arrowRight')+'Send for approval</button>')))
-        + '</div>'
-        + approvalNote
-        + '</div>';
+  S.flights.forEach((f,i)=>{
+    const chosen = S.chosenFlightId===f.id;
+    const priceSym = (f.currency==='USD'||!f.currency) ? '$' : f.currency+' ';
+    opts += '<div class="card opt'+(chosen?' recommended':'')+'">'
+      + '<div class="opt-head">'
+      +   '<span class="opt-tag '+(i===0?'rec':'alt')+'">'+(i===0?'Best value':'Option '+(i+1))+'</span>'
+      +   '<span class="pill ok">'+svg('check')+(f.stops===0?'Nonstop':f.stops+' stop'+(f.stops>1?'s':''))+'</span>'
+      + '</div>'
+      + '<div class="leg"><div class="lic">'+svg('plane')+'</div>'
+      +   '<div class="ldesc"><b>'+esc(f.airline)+(f.flight_number?' '+esc(f.flight_number):'')+'</b>'
+      +   '<span>'+esc(f.depart_time)+' → '+esc(f.arrive_time)+' · '+esc(f.duration)+'</span></div>'
+      +   '<div class="lprice">'+priceSym+f.price+'</div></div>'
+      + '<div class="opt-foot">'
+      +   '<div class="opt-total">Fare<b>'+priceSym+f.price+'</b></div>'
+      +   '<button class="btn '+(chosen?'btn-primary':'btn-ghost')+'" data-choose-flight="'+esc(f.id)+'">'+(chosen?svg('check')+'Selected':'Select')+'</button>'
+      + '</div>'
+      + '</div>';
   });
 
+  const h=S.hotel;
+  const hotelCard = h ? (''
+    + '<div class="card opt">'
+    +   '<div class="opt-head"><span class="opt-tag alt">Hotel · suggested</span>'
+    +     '<span class="pill flag">'+svg('alert')+'Placeholder — not a live search</span></div>'
+    +   '<div class="leg"><div class="lic">'+svg('hotel')+'</div>'
+    +     '<div class="ldesc"><b>'+esc(h.name)+'</b><span>'+esc(h.area)+' · '+h.nights+' night'+(h.nights>1?'s':'')+'</span></div>'
+    +     '<div class="lprice">'+(h.currency==='USD'?'$':h.currency+' ')+h.rate+'</div></div>'
+    +   '<p style="font-size:11.5px;color:var(--muted);margin-top:10px">Hotel search isn’t wired up to a real source yet (Kiwi’s MCP tool only covers flights) — this is a placeholder so the trip has somewhere to stay.</p>'
+    + '</div>')
+    : '';
+
+  const canBook = !!S.chosenFlightId;
+
   return ''
-  + '<h2 class="screen-title">Itinerary — ready to book</h2>'
-  + '<p class="screen-sub">The agent parsed your dates, destination and purpose, then filtered to <b>in-policy</b> options only. Out-of-policy choices are never surfaced silently — they’re flagged.</p>'
-  + '<div class="itin-grid">'+opts+'</div>';
+  + '<h2 class="screen-title">Top 3 flights — via Kiwi.com</h2>'
+  + '<p class="screen-sub">'+(S.flightNote?esc(S.flightNote):'Real flight results for your trip, found by the Travel Agent. Pick one to continue.')+'</p>'
+  + parsedBanner
+  + '<div class="itin-grid">'+opts+hotelCard+'</div>'
+  + '<div style="max-width:760px;margin:16px auto 0;display:flex;justify-content:flex-end">'
+  +   '<button class="btn btn-primary" id="bookBtn"'+(canBook?'':' disabled')+'>'+svg('check')+'Book trip</button>'
+  + '</div>';
 }
 
 function screenTripWatch(){
@@ -1285,13 +1539,12 @@ function screenTripWatch(){
   + '<div class="watch">'
   +   '<div class="card watch-card">'
   +     '<div class="radar">'+svg('radar')+'</div>'
-  +     '<div class="wtext"><b>Expense Agent is tracking your trip…</b><span>'+TRIP.dates+' · monitoring corporate-card feed, inbox receipts &amp; captures</span></div>'
+  +     '<div class="wtext"><b>Expense Agent is tracking your trip…</b><span>'+TRIP.dates+' · monitoring corporate-card feed &amp; captures</span></div>'
   +   '</div>'
   +   '<div class="card" style="padding:16px 18px">'
   +     '<div class="watch-steps" id="watchSteps">'
   +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Trip booked &amp; added to calendar</div>'
-  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Corporate-card transactions posting automatically</div>'
-  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Email receipts parsed (2 Uber rides)</div>'
+  +       '<div class="wstep done"><span class="wtick">'+svg('checkSm')+'</span>Flight &amp; hotel charged to corporate card</div>'
   +       '<div class="wstep pending" id="assembleStep"><span class="wtick"></span>Assembling &amp; policy-checking report…</div>'
   +     '</div>'
   +   '</div>'
@@ -1304,7 +1557,7 @@ function notifCard(){
     + '<div class="nic">'+svg('receipt')+'</div>'
     + '<div class="nbody">'
     +   '<div class="ntitle">Your Chicago trip report is ready <span class="live">AGENT-INITIATED</span></div>'
-    +   '<div class="nsub"><b>'+LINE_ITEMS.length+' items · '+fmt(TRIP.total)+'</b> · all in policy except <b>1</b>. The Expense Agent assembled it from your corporate card, inbox and captures — nothing for you to fill in.</div>'
+    +   '<div class="nsub"><b>'+LINE_ITEMS.length+' items · '+fmt(TRIP.total)+'</b> · all in policy except <b>1</b>. The Expense Agent assembled it from your corporate card and captures — nothing for you to fill in.</div>'
     +   '<button class="btn btn-agent" id="reviewBtn">'+svg('arrowRight')+'Review &amp; submit</button>'
     + '</div>'
   + '</div>';
@@ -1313,56 +1566,66 @@ function notifCard(){
 function screenReport(){
   let rows='';
   LINE_ITEMS.forEach(it=>{
-    const resolved = (it.n===9 && S.exceptionResolved);
-    const isFlag = (it.n===9 && !S.exceptionResolved);
+    const isFlag = (it.flag && !it.resolved);
     const sm = SRC_META[it.src];
-    const cat = resolved ? 'Client entertainment' : it.cat;
-    const gl  = resolved ? '6045' : it.gl;
-    const statCell = isFlag
-      ? '<span class="stat">'+svg('alert')+'Exception</span>'
-      : '<span class="stat" style="color:var(--success)">'+svg('check')+'In policy</span>';
+    const statCell = !it.evaluated
+      ? '<span class="stat" style="color:var(--muted)">'+svg('clock')+'Checking…</span>'
+      : isFlag
+        ? '<span class="stat">'+svg('alert')+'Exception</span>'
+        : '<span class="stat" style="color:var(--success)">'+svg('check')+'In policy</span>';
+    const dataTag = it.live
+      ? '<span class="data-tag live" title="Generated from your actual booking or a receipt you snapped"><i></i>Live</span>'
+      : '<span class="data-tag demo" title="Simulated corporate-card/email feed — this prototype has no real feed connected"><i></i>Demo</span>';
     rows+='<tr class="'+(isFlag?'row-flag':'row-ok')+'">'
         + '<td style="color:var(--muted);white-space:nowrap">'+it.date+'</td>'
-        + '<td><div class="m-name"><span class="rcpt">'+svg('file')+'</span><span>'+it.merchant+'<div class="m-sub">'+it.sub+'</div></span></div></td>'
-        + '<td><span class="cat-pill">'+cat+'</span></td>'
-        + '<td><span class="gl">'+gl+'</span></td>'
+        + '<td><div class="m-name"><span class="rcpt">'+svg('file')+'</span><span>'+esc(it.merchant)+'<div class="m-sub">'+esc(it.sub)+'</div></span></div></td>'
+        + '<td><span class="cat-pill">'+esc(it.cat)+'</span></td>'
+        + '<td><span class="gl">'+it.gl+'</span></td>'
         + '<td><span class="src '+it.src+'">'+svg(sm.icon)+sm.label+'</span></td>'
+        + '<td>'+dataTag+'</td>'
         + '<td class="amt">'+fmt(it.amt)+'</td>'
         + '<td>'+statCell+'</td>'
         + '</tr>';
   });
 
-  const exceptionPanel = ''
-    + '<div class="exception-panel'+(S.exceptionResolved?' hide':'')+'" id="excPanel">'
-    +   '<div class="eic">'+svg('alert')+'</div>'
-    +   '<div class="ebody">'
-    +     '<div class="etitle">One item needs a quick confirmation</div>'
-    +     '<div class="eq">This <b>$180 steakhouse dinner</b> is over the <b>$75</b> dinner limit and has no attendees listed. Was this a client dinner? If so, I’ll route it as <b>entertainment</b> — who attended?</div>'
-    +     '<div class="eactions">'
-    +       '<button class="ebtn primary" id="resolveClient">Client dinner — 2 client attendees</button>'
-    +       '<button class="ebtn" id="resolvePersonal">Personal — remove from report</button>'
-    +     '</div>'
-    +   '</div>'
-    + '</div>';
+  // One card per real flagged item — driven entirely by /api/evaluate-report's
+  // actual policy judgment (it.flag holds Claude's reason), not a script. A
+  // report can end up with zero, one, or several of these depending on what's
+  // actually on it.
+  const flaggedItems = LINE_ITEMS.filter(it => it.flag && !it.resolved);
+  const exceptionPanel = flaggedItems.map(it => {
+    const isMeal = it.cat==='Meals';
+    return '<div class="exception-panel" data-exc-n="'+it.n+'">'
+      +   '<div class="eic">'+svg('alert')+'</div>'
+      +   '<div class="ebody">'
+      +     '<div class="etitle">'+esc(it.merchant)+' needs a quick confirmation</div>'
+      +     '<div class="eq">'+esc(it.flag)+'</div>'
+      +     '<div class="eactions">'
+      +       '<button class="ebtn primary" data-resolve-n="'+it.n+'" data-resolve-kind="keep">'+(isMeal?'Client dinner — 2 client attendees':'Approve as business expense')+'</button>'
+      +       '<button class="ebtn" data-resolve-n="'+it.n+'" data-resolve-kind="personal">Remove as personal expense</button>'
+      +     '</div>'
+      +   '</div>'
+      + '</div>';
+  }).join('');
 
-  const resolvedNote = ''
-    + '<div class="resolved-note'+(S.exceptionResolved?' show':'')+'" id="resolvedNote">'
-    +   svg('check')+'<span>Resolved — re-coded to <b>Client entertainment (GL 6045)</b>, 2 client attendees attached. Report is fully policy-clear.</span>'
-    + '</div>';
-
-  const submitBtn = S.exceptionResolved
-    ? '<button class="btn btn-primary" id="submitBtn">'+svg('check')+'Submit for approval</button>'
-    : '<button class="btn btn-primary" id="submitBtn" disabled style="opacity:.45;cursor:not-allowed">Resolve the exception to submit</button>';
+  const ready = itemsResolved(LINE_ITEMS);
+  const submitBtn = S.approved
+    ? '<div class="submitted-status status-approved">'+svg('checkSm')+'Approved — posted to Finance</div>'
+    : S.submitted
+      ? '<div class="submitted-status status-pending">'+svg('clock')+'Submitted — awaiting manager approval</div>'
+      : ready
+        ? '<button class="btn btn-primary" id="submitBtn">'+svg('check')+'Submit for approval</button>'
+        : '<button class="btn btn-primary" id="submitBtn" disabled style="opacity:.45;cursor:not-allowed">'+(S.evaluating?'Policy-checking…':'Resolve the exception'+(flaggedItems.length>1?'s':'')+' to submit')+'</button>';
 
   const sentBackBanner = S.sentBack
     ? '<div class="guide" style="border-color:var(--warn-line);background:var(--warn-tint);margin-bottom:16px">'
       +   '<div class="g-ic" style="background:#fff;color:var(--warn)">'+svg('alert')+'</div>'
-      +   '<div class="g-txt"><b>Sent back by your manager</b><span>The $180 dinner exception needs another look before you can resubmit.</span></div>'
+      +   '<div class="g-txt"><b>Sent back by your manager</b><span>The flagged item(s) need another look before you can resubmit.</span></div>'
       + '</div>'
     : '';
 
-  const flaggedNow = LINE_ITEMS.some(it=>it.n===9) && !S.exceptionResolved;
-  const okCount = LINE_ITEMS.length - (flaggedNow?1:0);
+  const flaggedNow = flaggedItems.length;
+  const okCount = LINE_ITEMS.length - flaggedNow;
 
   return ''
   + '<div class="badge-trigger badge-agent"><span class="emo">🤖</span> The agent started this</div>'
@@ -1379,94 +1642,144 @@ function screenReport(){
   +     '<div class="rh-r">'
   +       '<div class="tot-lab">Total</div>'
   +       '<div class="tot-val">'+fmt(TRIP.total)+'</div>'
-  +       '<div class="tot-note" id="totNote">'+(S.exceptionResolved?'All items in policy':okCount+' of '+LINE_ITEMS.length+' in policy')+'</div>'
+  +       '<div class="tot-note" id="totNote">'+(flaggedNow===0?'All items in policy':okCount+' of '+LINE_ITEMS.length+' in policy')+'</div>'
   +     '</div>'
   +   '</div>'
+  +   '<div class="data-legend" style="padding:0 22px">'
+  +     '<span><span class="data-tag live"><i></i>Live</span> your actual booked flight/hotel, or a receipt you snapped and the agent read</span>'
+  +     '<span><span class="data-tag demo"><i></i>Demo</span> simulated corporate-card &amp; email feed — this prototype has no real feed connected</span>'
+  +   '</div>'
   +   '<table class="tbl">'
-  +     '<thead><tr><th>Date</th><th>Merchant</th><th>Category</th><th>GL</th><th>Captured via</th><th class="num">Amount</th><th>Status</th></tr></thead>'
+  +     '<thead><tr><th>Date</th><th>Merchant</th><th>Category</th><th>GL</th><th>Captured via</th><th>Data</th><th class="num">Amount</th><th>Status</th></tr></thead>'
   +     '<tbody>'+rows+'</tbody>'
   +   '</table>'
   +   exceptionPanel
-  +   resolvedNote
   +   '<div class="report-foot">'
-  +     '<div class="rf-note">'+svg('sparkle')+'Corporate-card items were zero-touch. Out-of-pocket items came from inbox &amp; one-tap captures.</div>'
+  +     '<div class="rf-note">'+svg('sparkle')+'Corporate-card items were zero-touch. Out-of-pocket items came from your one-tap captures or a confirmed inbox receipt.</div>'
   +     submitBtn
   +   '</div>'
   + '</div>'
-  + screenSnapCard();
+  + screenSnapCard()
+  + screenInboxCard();
 }
 
+// Real IMAP scan of a Gmail inbox (/api/check-inbox) for receipts that
+// mention this trip. The subject line is already an explicit, deliberate
+// signal from the traveler, so a match is auto-added straight to the report
+// the same way a corporate-card charge would be — no separate confirm step.
+// This runs once automatically when the trip is booked (see the bookBtn
+// handler); the Refresh button just re-checks for anything sent since then.
+function screenInboxCard(){
+  if(S.submitted) return '';
+  let status;
+  if(S.inboxError) status = '<span style="color:var(--danger,#c0392b)">'+esc(S.inboxError)+'</span>';
+  else if(S.inboxChecking) status = '<span>Reading your inbox…</span>';
+  else if(S.inboxChecked){
+    if(S.inboxLastAdded.length){
+      const names = S.inboxLastAdded.map(function(it){ return esc(it.merchant)+' ('+fmt(it.amt)+')'; }).join(', ');
+      status = '<span>Added '+S.inboxLastAdded.length+' item'+(S.inboxLastAdded.length>1?'s':'')+' from your inbox — '+names+'.</span>';
+    } else {
+      status = '<span>Checked '+S.inboxScanned+' new email'+(S.inboxScanned===1?'':'s')+' with a matching subject — nothing new to add.</span>';
+    }
+  } else status = '<span>Email a receipt to your inbox with the subject line set to <b>'+esc(S.trip.destination||'the destination city')+'</b> — the agent reads and adds matches automatically.</span>';
+
+  return '<div class="card snap-card inbox-card"><div class="snap-idle">'
+    +   '<div class="si-ic">'+svg('mail')+'</div>'
+    +   '<div class="si-txt"><b>Inbox receipts</b>'+status+'</div>'
+    +   '<button class="btn btn-ghost" id="checkInboxBtn"'+(S.inboxChecking?' disabled':'')+'>'+svg('mail')+(S.inboxChecking?'Checking…':'Refresh')+'</button>'
+    + '</div>'
+    + '</div>';
+}
+
+// Real photo -> Claude vision extraction. snapStep: 0 idle · 1 reading ·
+// 2 error (couldn't extract) · 3 confirm (extraction succeeded).
 function screenSnapCard(){
   if(S.submitted) return '';
+  const fileInput = '<input type="file" id="snapFileInput" accept="image/*" capture="environment" style="display:none" />';
   if(S.snapAdded){
-    return '<div class="card snap-card"><div class="snap-done">'+svg('check')+'<span>Added — '+SNAP_CANDIDATE.merchant+', '+fmt(SNAP_CANDIDATE.amt)+'. It’s now in the table above, line '+LINE_ITEMS.length+'.</span></div></div>';
+    const ex = S.snapExtracted || {};
+    return '<div class="card snap-card"><div class="snap-done">'+svg('check')+'<span>Added — '+esc(ex.merchant||'Receipt')+', '+fmt(ex.amount||0)+'. It’s now in the table above, line '+LINE_ITEMS.length+'.</span></div>'
+      +   '<label class="btn btn-ghost" for="snapFileInput" style="cursor:pointer;margin-top:10px">'+svg('camera')+'Snap another receipt</label>'
+      +   fileInput
+      + '</div>';
   }
   if(S.snapStep===0){
     return '<div class="card snap-card"><div class="snap-idle">'
       +   '<div class="si-ic">'+svg('camera')+'</div>'
-      +   '<div class="si-txt"><b>Paid out of pocket, no card or email trail?</b><span>No corporate-card swipe, no inbox receipt — the agent has zero visibility into this one until you snap it.</span></div>'
-      +   '<button class="btn btn-agent" id="snapBtn">'+svg('camera')+'Snap a receipt</button>'
+      +   '<div class="si-txt"><b>Paid out of pocket, no card or email trail?</b><span>No corporate-card swipe, no inbox receipt — snap a photo and the agent will read it.</span></div>'
+      +   '<label class="btn btn-agent" for="snapFileInput" style="cursor:pointer">'+svg('camera')+'Snap a receipt</label>'
+      +   fileInput
       + '</div></div>';
   }
-  const statusBlock = S.snapStep===1
-    ? '<div class="ss-title">Uploading receipt…</div><div class="ss-sub">'+SNAP_CANDIDATE.merchant+'</div><div class="thinking"><i></i><i></i><i></i></div>'
-    : S.snapStep===2
-    ? '<div class="ss-title">Agent extracting details…</div><div class="ss-sub">Reading merchant, amount, and category</div><div class="thinking"><i></i><i></i><i></i></div>'
-    : '<div class="ss-title">Got it — here’s what the agent found</div>'
-      + '<div class="ss-sub">Confirm and it’ll be added as a new line item.</div>'
-      + '<div class="snap-fields">'
-      +   '<div class="snap-field"><span>Merchant</span><span>'+SNAP_CANDIDATE.merchant+'</span></div>'
-      +   '<div class="snap-field"><span>Amount</span><span>'+fmt(SNAP_CANDIDATE.amt)+'</span></div>'
-      +   '<div class="snap-field"><span>Category</span><span>'+SNAP_CANDIDATE.cat+'</span></div>'
-      +   '<div class="snap-field"><span>Payment</span><span>Personal (cash)</span></div>'
-      + '</div>'
-      + '<div style="display:flex;gap:8px">'
-      +   '<button class="btn btn-primary" id="snapConfirmBtn">'+svg('check')+'Add to report</button>'
-      +   '<button class="btn btn-ghost" id="snapCancelBtn">Cancel</button>'
-      + '</div>';
+  const thumb = S.snapImage ? '<img class="snap-thumb" src="'+S.snapImage+'" alt="Snapped receipt" />' : '';
+  if(S.snapStep===1){
+    return '<div class="card snap-card"><div class="snap-flow">'
+      +   thumb
+      +   '<div class="snap-status"><div class="ss-title">Agent reading the receipt…</div><div class="ss-sub">Extracting merchant, amount, and category</div><div class="thinking"><i></i><i></i><i></i></div></div>'
+      + '</div></div>';
+  }
+  if(S.snapStep===2){
+    return '<div class="card snap-card"><div class="snap-flow">'
+      +   thumb
+      +   '<div class="snap-status">'
+      +     '<div class="ss-title" style="color:var(--danger,#c0392b)">Couldn’t read that receipt</div>'
+      +     '<div class="ss-sub">'+esc(S.snapError)+'</div>'
+      +     '<div style="display:flex;gap:8px;margin-top:8px">'
+      +       '<label class="btn btn-primary" for="snapFileInput" style="cursor:pointer">Try another photo</label>'
+      +       fileInput
+      +       '<button class="btn btn-ghost" id="snapCancelBtn">Cancel</button>'
+      +     '</div>'
+      +   '</div>'
+      + '</div></div>';
+  }
+  const ex = S.snapExtracted || {};
   return '<div class="card snap-card"><div class="snap-flow">'
-    +   '<img class="snap-thumb" src="'+RECEIPT_IMG+'" alt="Snapped receipt" />'
-    +   '<div class="snap-status">'+statusBlock+'</div>'
+    +   thumb
+    +   '<div class="snap-status">'
+    +     '<div class="ss-title">Got it — here’s what the agent found</div>'
+    +     '<div class="ss-sub">Confirm and it’ll be added as a new line item.</div>'
+    +     '<div class="snap-fields">'
+    +       '<div class="snap-field"><span>Merchant</span><span>'+esc(ex.merchant||'—')+'</span></div>'
+    +       '<div class="snap-field"><span>Amount</span><span>'+(ex.amount!=null?fmt(ex.amount):'—')+'</span></div>'
+    +       '<div class="snap-field"><span>Category</span><span>'+esc(ex.category||'Other')+'</span></div>'
+    +       '<div class="snap-field"><span>Payment</span><span>Personal (cash)</span></div>'
+    +     '</div>'
+    +     '<div style="display:flex;gap:8px">'
+    +       '<button class="btn btn-primary" id="snapConfirmBtn">'+svg('check')+'Add to report</button>'
+    +       '<button class="btn btn-ghost" id="snapCancelBtn">Cancel</button>'
+    +     '</div>'
+    +   '</div>'
     + '</div></div>';
 }
 
-// The live Chicago trip's place in its own lifecycle — this is what lets the
-// employee track it end-to-end from one tab, without ever visiting Manager.
-function liveTripStage(){
-  if(S.empStep<4) return null;         // trip not yet ended / report not built
-  if(S.approved) return 'approved';
-  if(S.sentBack) return 'changes';
-  if(S.submitted) return 'submitted';
-  if(S.exceptionResolved) return 'ready';
-  return 'attention';
-}
-
-function liveTripRow(kind){
-  const openBtn = '<button class="btn btn-agent" id="openLiveReportBtn">'+svg('arrowRight')+{
+// Each tracked trip's place in its own lifecycle — this is what lets the
+// employee track every trip end-to-end from one tab, without visiting Manager.
+function tripRow(t, kind){
+  const openBtn = '<button class="btn btn-agent" data-open-trip="'+t.id+'">'+svg('arrowRight')+{
     attention:'Resolve &amp; review', ready:'Review &amp; submit', changes:'Review &amp; resubmit'
   }[kind]+'</button>';
   const meta = {
     attention:{ic:'alert',    warn:true,  line:'1 item needs your input before this can be submitted — a flagged $180 dinner.', tag:'Needs attention', action:openBtn},
     ready:    {ic:'receipt',  warn:false, line:'Exception resolved — ready to submit for approval.',                            tag:'Ready',            action:openBtn},
-    submitted:{ic:'clock',    warn:false, line:'Submitted — waiting on your manager’s call on the one flagged item.',           tag:'Awaiting approval',action:'<button class="btn btn-ghost" id="openLiveReportBtn">View report</button>'},
+    submitted:{ic:'clock',    warn:false, line:'Submitted — waiting on your manager’s call on the one flagged item.',           tag:'Awaiting approval',action:'<button class="btn btn-ghost" data-open-trip="'+t.id+'">View report</button>'},
     changes:  {ic:'alert',    warn:true,  line:'Your manager sent this back — the dinner exception needs another look before resubmitting.', tag:'Needs changes', action:openBtn},
     approved: {ic:'checkSm',  warn:false, line:'',                                                                              tag:'Approved',         action:''}
   }[kind];
   if(kind==='approved'){
     return '<div class="exp-row done">'
         +   '<div class="eic">'+svg('checkSm')+'</div>'
-        +   '<div class="ebody"><b>'+TRIP.name+'</b><span class="emeta">'+TRIP.dates+'</span></div>'
-        +   '<div class="eamt"><b>'+fmt(TRIP.total)+'</b><span>Approved</span></div>'
+        +   '<div class="ebody"><b>'+esc(t.name)+'</b><span class="emeta">'+esc(t.dates)+'</span></div>'
+        +   '<div class="eamt"><b>'+fmt(t.total)+'</b><span>Approved</span></div>'
         + '</div>';
   }
   return '<div class="exp-row">'
       +   '<div class="eic"'+(meta.warn?' style="background:var(--warn-tint);color:var(--warn)"':'')+'>'+svg(meta.ic)+'</div>'
       +   '<div class="ebody">'
-      +     '<b>'+TRIP.name+'</b><span class="emeta">'+TRIP.dates+' · '+LINE_ITEMS.length+' items</span>'
+      +     '<b>'+esc(t.name)+'</b><span class="emeta">'+esc(t.dates)+' · '+t.lineItems.length+' items</span>'
       +     '<div class="eline">'+svg('sparkle')+'<span>'+meta.line+'</span></div>'
       +     '<div class="eaction">'+meta.action+'</div>'
       +   '</div>'
-      +   '<div class="eamt"><b>'+fmt(TRIP.total)+'</b><span>'+meta.tag+'</span></div>'
+      +   '<div class="eamt"><b>'+fmt(t.total)+'</b><span>'+meta.tag+'</span></div>'
       + '</div>';
 }
 
@@ -1479,7 +1792,7 @@ function expSection(title, rows, muted){
 }
 
 function screenExpenseHub(){
-  const stage = liveTripStage();
+  saveActiveTrip(); // keep TRIPS current before reading it below
   const previewNote = S.expPreview
     ? '<div class="guide" style="margin-top:14px"><div class="g-ic">'+svg('info')+'</div>'
       + '<div class="g-txt"><b>Preview only in this demo</b><span>In production this opens the same review screen you saw for Chicago — prefilled with all 7 Austin items, zero exceptions, one submit tap.</span></div></div>'
@@ -1495,24 +1808,35 @@ function screenExpenseHub(){
       + '</div>'
       + previewNote;
 
-  const attentionRows = stage==='attention' ? [liveTripRow('attention')] : [];
-  const readyRows     = (stage==='ready' ? [liveTripRow('ready')] : []).concat([austinRow]);
-  const awaitingRows  = stage==='submitted' ? [liveTripRow('submitted')] : [];
-  const changesRows   = stage==='changes' ? [liveTripRow('changes')] : [];
-  const handledRows   = (stage==='approved' ? [liveTripRow('approved')] : []).concat(
-    PAST_REPORTS.map(t=>
+  const attentionRows=[], readyRows=[austinRow], awaitingRows=[], changesRows=[], handledRows=[];
+  TRIPS.slice().reverse().forEach(function(t){ // newest first
+    const kind = tripStage(t);
+    const row = tripRow(t, kind);
+    if(kind==='attention') attentionRows.push(row);
+    else if(kind==='ready') readyRows.unshift(row); // ahead of the Austin preview
+    else if(kind==='submitted') awaitingRows.push(row);
+    else if(kind==='changes') changesRows.push(row);
+    else if(kind==='approved') handledRows.push(row);
+  });
+  PAST_REPORTS.forEach(function(t){
+    handledRows.push(
       '<div class="exp-row done">'
         + '<div class="eic">'+svg('checkSm')+'</div>'
-        + '<div class="ebody"><b>'+t.name+'</b><span class="emeta">'+t.dates+'</span></div>'
-        + '<div class="eamt"><b>'+fmt(t.total)+'</b><span>'+t.status+'</span></div>'
+        + '<div class="ebody"><b>'+esc(t.name)+'</b><span class="emeta">'+esc(t.dates)+'</span></div>'
+        + '<div class="eamt"><b>'+fmt(t.total)+'</b><span>'+esc(t.status)+'</span></div>'
       + '</div>'
-    )
-  );
+    );
+  });
+
+  const capNote = TRIPS.length>=3
+    ? '<p class="screen-sub" style="margin-top:-4px">You\'re tracking '+TRIPS.length+' trips — the limit for this demo. Get one approved to free up a slot for the next.</p>'
+    : '';
 
   return ''
   + '<div class="badge-trigger badge-agent"><span class="emo">🤖</span> The agent already did this — no report to go find</div>'
   + '<h2 class="screen-title">Expense Agent</h2>'
   + '<p class="screen-sub">Every trip that ends becomes a report on its own. Track it end-to-end right here — submitted, approved, sent back, or reimbursed — no need to go find a manager.</p>'
+  + capNote
   + '<div class="exp-hub">'
   +   expSection('Needs your input', attentionRows)
   +   expSection('Ready for your one-tap approval', readyRows)
@@ -1522,9 +1846,46 @@ function screenExpenseHub(){
   + '</div>';
 }
 
+// The queue is whichever tracked trips are submitted and not yet resolved,
+// oldest first (TRIPS is in booking order) — so this now works whether 1, 2,
+// or 3 trips are in flight, not just a single hardcoded one.
+function pendingApproval(){
+  return TRIPS.find(function(t){ return t.submitted && !t.approved && !t.sentBack; });
+}
+
+// How the employee actually resolved a flagged item — read straight off the
+// item itself (Meals recoded to Client entertainment vs. anything else kept
+// as-is), not a script.
+function resolutionText(it){
+  return it.cat==='Client entertainment'
+    ? 'Employee confirmed 2 client attendees; agent re-coded it to Client entertainment (GL 6045).'
+    : 'Employee approved it as a legitimate business expense.';
+}
+
 function screenApprovals(){
-  // Empty 'all caught up' state — after the manager approved & returned, or sent back.
-  if(S.apprCleared){
+  saveActiveTrip(); // in case the trip just submitted is also the one currently open
+  // One-time confirmation right after an approve/send-back action, before
+  // falling through to the next pending trip (if any) or the empty state.
+  if(S.mgrConfirm){
+    const c = S.mgrConfirm;
+    return c.kind==='approved'
+      ? '<div class="card success-hero" style="margin:0 auto">'
+        + '<div class="sh-ic">'+svg('check')+'</div>'
+        + '<h3>Exception approved</h3>'
+        + '<p><b>'+esc(c.name)+'</b> is cleared and posted downstream automatically. Finance receives it already categorized, GL-coded and receipt-complete — no further action needed from you.</p>'
+        + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
+      + '</div>'
+      : '<div class="card success-hero" style="margin:0 auto">'
+        + '<div class="sh-ic" style="background:var(--warn-tint);color:var(--warn)">'+svg('arrowRight')+'</div>'
+        + '<h3>Sent back for changes</h3>'
+        + '<p>Aayush will see <b>'+esc(c.name)+'</b> flagged in their Expense Agent tab, with the exception reopened for another look before resubmitting.</p>'
+        + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
+      + '</div>';
+  }
+  const pending = pendingApproval();
+  // Empty 'all caught up' state — computed fresh each render, not a sticky flag,
+  // so it correctly reopens if another trip gets submitted later.
+  if(!pending){
     return ''
     + '<h2 class="screen-title">Approvals</h2>'
     + '<p class="screen-sub">The manager sees an <b>agent summary</b>, not a raw line-item form. Fully in-policy reports never reach here — they auto-clear. Only genuine exceptions surface, with context.</p>'
@@ -1534,49 +1895,56 @@ function screenApprovals(){
     +   '<p>No pending approvals. The agent auto-cleared everything in policy — when a genuine exception needs your judgment, it\'ll surface here.</p>'
     + '</div>';
   }
-  // Just approved (confirmation), not yet returned to the queue.
-  if(S.approved){
-    return '<div class="card success-hero" style="margin:0 auto">'
-      + '<div class="sh-ic">'+svg('check')+'</div>'
-      + '<h3>Exception approved</h3>'
-      + '<p>The report is cleared and posted downstream automatically. Finance receives it already categorized, GL-coded and receipt-complete — no further action needed from you.</p>'
-      + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
-    + '</div>';
-  }
-  // Just sent back (confirmation), not yet returned to the queue.
-  if(S.sentBack){
-    return '<div class="card success-hero" style="margin:0 auto">'
-      + '<div class="sh-ic" style="background:var(--warn-tint);color:var(--warn)">'+svg('arrowRight')+'</div>'
-      + '<h3>Sent back for changes</h3>'
-      + '<p>Aayush will see this flagged in their Expense Agent tab, with the exception reopened for another look before resubmitting.</p>'
-      + '<button class="btn btn-primary" id="backToApprovalsBtn">'+svg('arrowRight')+'Back to approvals</button>'
-    + '</div>';
-  }
+  const queuedCount = TRIPS.filter(function(t){ return t.submitted && !t.approved && !t.sentBack; }).length;
+  const queueNote = queuedCount > 1
+    ? '<div class="ctx-line">'+svg('clock')+'<span>'+(queuedCount-1)+' more waiting behind this one.</span></div>'
+    : '';
+
+  const flaggedList = pending.lineItems.filter(function(it){ return it.flag; });
+  const excDetail = flaggedList.map(function(it){
+    return '<div class="exc-detail">'
+      +   '<div class="ed-t">'+svg('alert')+esc(it.merchant)+' — '+fmt(it.amt)+'</div>'
+      +   '<div class="ed-b">'+esc(it.flag)+' '+resolutionText(it)+'</div>'
+      + '</div>';
+  }).join('');
+
+  const recBadge = '<div class="assembled" style="margin:8px 0 0">'+svg('sparkle')+'Agent recommends: '+(pending.approvalRecommendation==='approve'?'Approve':'Review')+'</div>';
+
+  const actions = flaggedList.length
+    ? '<div class="appr-actions">'
+      +   '<button class="btn btn-primary" id="approveBtn">'+svg('check')+'Approve exception'+(flaggedList.length>1?'s':'')+'</button>'
+      +   '<button class="btn btn-ghost" id="sendbackBtn">'+svg('arrowRight')+'Send back</button>'
+      + '</div>'
+    // The agent's own policy check found nothing wrong — still requires a
+    // one-tap human sign-off, just with no judgment call attached to it.
+    : '<div class="appr-actions">'
+      +   '<button class="btn btn-primary" id="approveBtn">'+svg('check')+'Approve — nothing flagged</button>'
+      + '</div>';
+
   return ''
   + '<h2 class="screen-title">Approvals</h2>'
   + '<p class="screen-sub">The manager sees an <b>agent summary</b>, not a raw line-item form. Fully in-policy reports never reach here — they auto-clear. Only genuine exceptions surface, with context.</p>'
   + '<div class="card appr-card approval">'
   +   '<div class="appr-top">'
   +     '<div class="aic">'+svg('clipboardCheck')+'</div>'
-  +     '<div><b>Approval Assist</b><span>Summarized for a fast, confident call</span></div>'
+  +     '<div><b>Approval Assist</b><span>Real policy check against POLICY.md — not a script</span></div>'
+  +     '<button class="btn btn-ghost" id="refreshApprovalBtn" style="margin-left:auto"'+(S.mgrRefreshing?' disabled':'')+' title="POLICY.md is read fresh every time — use this if you edited it after this report was checked">'
+  +       svg('clock')+(S.mgrRefreshing?'Checking…':'Re-check policy')
+  +     '</button>'
   +   '</div>'
   +   '<div class="appr-body">'
-  +     '<div class="appr-summary"><b>Aayush’s Chicago trip</b> — '+fmt(TRIP.total)+'. The agent auto-cleared everything in policy and flagged the one item that needs your judgment.</div>'
+  +     (S.mgrRefreshError ? '<p style="color:#c0392b;font-weight:600;margin:0 0 10px">'+esc(S.mgrRefreshError)+'</p>' : '')
+  +     '<div class="appr-summary"><b>Aayush’s '+esc(pending.name)+'</b> — '+fmt(pending.total)+'. '+esc(pending.approvalSummary||'')+'</div>'
+  +     recBadge
   +     '<div class="appr-stats">'
-  +       '<div class="astat good"><div class="k">Auto-cleared</div><div class="v">'+(LINE_ITEMS.length-1)+' / '+LINE_ITEMS.length+'</div></div>'
-  +       '<div class="astat warnv"><div class="k">Needs your call</div><div class="v">1</div></div>'
-  +       '<div class="astat"><div class="k">Trip total</div><div class="v">'+fmt(TRIP.total)+'</div></div>'
+  +       '<div class="astat good"><div class="k">Auto-cleared</div><div class="v">'+(pending.lineItems.length-flaggedList.length)+' / '+pending.lineItems.length+'</div></div>'
+  +       '<div class="astat warnv"><div class="k">Needs your call</div><div class="v">'+flaggedList.length+'</div></div>'
+  +       '<div class="astat"><div class="k">Trip total</div><div class="v">'+fmt(pending.total)+'</div></div>'
   +     '</div>'
-  +     '<div class="exc-detail">'
-  +       '<div class="ed-t">'+svg('alert')+'The one exception</div>'
-  +       '<div class="ed-b"><b>$180 client dinner</b> — over the $75 limit. Employee confirmed <b>2 client attendees</b>; agent re-coded it to <b>Client entertainment (GL 6045)</b>.</div>'
-  +     '</div>'
-  +     '<div class="ctx-line">'+svg('trendUp')+'<span>Context: this trip is <b>~12% under</b> the typical Chicago trip cost (~$2,660).</span></div>'
-  +     '<div class="appr-actions">'
-  +       '<button class="btn btn-primary" id="approveBtn">'+svg('check')+'Approve exception</button>'
-  +       '<button class="btn btn-ghost" id="sendbackBtn">'+svg('arrowRight')+'Send back</button>'
-  +     '</div>'
-  +     '<div class="appr-foot-note">'+svg('info')+'You’re approving one judgment call — not auditing nine line items. That’s the whole job.</div>'
+  +     excDetail
+  +     queueNote
+  +     actions
+  +     '<div class="appr-foot-note">'+svg('info')+'You’re approving the agent\'s policy check — not auditing every line item. That’s the whole job.</div>'
   +   '</div>'
   + '</div>';
 }
@@ -1763,7 +2131,6 @@ function guideToHub(text, sub, cta){
 // ============================================================
 function render(){
   if(watchTimer){clearTimeout(watchTimer);watchTimer=null;}
-  if(snapTimer){clearTimeout(snapTimer);snapTimer=null;}
   renderRoles();
   renderPipeline();
   document.getElementById('backBtn').disabled = NAV_HISTORY.length===0;
@@ -1795,6 +2162,15 @@ function render(){
   if(S.role==='employee' && !(S.view==='main' && S.empStep===1)){
     html += '<div class="new-trip-float"><button class="btn btn-ghost" id="newTripFloatBtn" title="Start a fresh trip">'+svg('compass')+'New trip</button></div>';
   }
+  // One-shot notice when "New trip" was just blocked by the 3-trip cap —
+  // shown for exactly this render, then auto-clears.
+  if(S.tripCapNotice){
+    html = '<div class="guide" style="border-color:var(--warn-line);background:var(--warn-tint);margin-bottom:16px">'
+      +   '<div class="g-ic" style="background:#fff;color:var(--warn)">'+svg('alert')+'</div>'
+      +   '<div class="g-txt"><b>3-trip limit reached</b><span>All 3 tracked trips are still open. Get one approved (or send one back and resubmit) before booking another.</span></div>'
+      + '</div>' + html;
+    S.tripCapNotice=false;
+  }
   stage.innerHTML=html;
   stage.firstElementChild && stage.firstElementChild.classList.add('screen');
   wire();
@@ -1815,9 +2191,15 @@ function wire(){
   const reviewReady=document.getElementById('reviewReadyBtn');
   if(reviewReady) reviewReady.onclick=()=>{ S.expPreview=true; render(); };
 
-  // Expense hub — jump into the real report at whatever stage it's at
-  const openLive=document.getElementById('openLiveReportBtn');
-  if(openLive) openLive.onclick=()=>go(()=>{ S.view='main'; });
+  // Expense hub — jump into any tracked trip's report at whatever stage it's
+  // at. Switches the active trip first (saving whatever was open) if needed.
+  document.querySelectorAll('[data-open-trip]').forEach(b=>{
+    b.onclick=()=>{
+      const id=b.dataset.openTrip;
+      if(id!==S.activeTripId){ saveActiveTrip(); loadTrip(id); }
+      go(()=>{ S.view='main'; S.role='employee'; S.empStep=4; });
+    };
+  });
 
   // Same-tab nudge after submitting
   const gth=document.getElementById('guideToHubBtn');
@@ -1829,10 +2211,11 @@ function wire(){
   const ntFloat=document.getElementById('newTripFloatBtn');
   if(ntFloat) ntFloat.onclick=newTripReset;
 
-  // Manager: 'Back to approvals' — clears the approved state and returns to the
-  // pending approvals inbox. Stays in the Manager role (no Finance jump).
+  // Manager: 'Back to approvals' — clears the one-time confirmation and
+  // returns to the queue (shows the next pending trip, if any). Stays in the
+  // Manager role (no Finance jump).
   const backAppr=document.getElementById('backToApprovalsBtn');
-  if(backAppr) backAppr.onclick=()=>{ S.apprCleared=true; S.mgrView='approvals'; render(); };
+  if(backAppr) backAppr.onclick=()=>{ S.mgrConfirm=null; S.mgrView='approvals'; render(); };
 
   // Budget approvals — finance sign-off
   document.querySelectorAll('[data-budget-approve]').forEach(b=>{
@@ -1842,143 +2225,544 @@ function wire(){
     b.onclick=()=>{ BUDGET_REQUESTS.find(r=>r.id===+b.dataset.budgetReject).status='rejected'; render(); };
   });
 
-  // Screen 1 — chat
+  // Screen 1 — chat (every message calls Claude via /api/chat)
   const chip=document.getElementById('promptChip');
   const input=document.getElementById('chatInput');
   const send=document.getElementById('sendBtn');
-  const PROMPT='I need to be in Chicago Thu for the client review, back Fri evening.';
-  if(chip) chip.onclick=()=>sendMessage(PROMPT);
-  if(send) send.onclick=()=>sendMessage(input.value.trim()||PROMPT);
-  if(input) input.onkeydown=e=>{ if(e.key==='Enter') sendMessage(input.value.trim()||PROMPT); };
-  // Re-arm the "thinking" transition ONLY when the message was just sent and we
-  // have NOT yet advanced to the itinerary. If the user navigated Back to chat
-  // (chatAdvanced===true), do NOT auto-advance — let them re-send / edit.
-  if(S.role==='employee' && S.empStep===1 && S.chatSent && !S.chatAdvanced){
-    setTimeout(()=>go(()=>{ S.empStep=2; S.chatAdvanced=true; }), 1500);
-  }
+  if(chip) chip.onclick=()=>sendMessage(chip.dataset.prompt);
+  if(send) send.onclick=()=>{ if(input){ const v=input.value; input.value=''; sendMessage(v); } };
+  if(input) input.onkeydown=e=>{ if(e.key==='Enter'){ e.preventDefault(); const v=input.value; input.value=''; sendMessage(v); } };
 
-  // Screen 2 — book
-  const book=document.getElementById('bookBtn');
-  if(book) book.onclick=()=>go(()=>{ S.empStep=3; });
-  document.querySelectorAll('[data-selectalt]').forEach(b=>{
-    b.onclick=()=>go(()=>{ S.empStep=3; });
+  // Trip form fields are directly editable — typing updates state live
+  // (via targeted DOM updates, not a full render, so focus isn't lost).
+  document.querySelectorAll('[data-trip-field]').forEach(inp=>{
+    inp.oninput=()=>{
+      const k=inp.dataset.tripField;
+      const v=inp.value.trim();
+      S.trip[k]=v||null;
+      S.formEditsPending.add(k);
+      const wrap=inp.closest('.tf-field');
+      if(wrap){ wrap.classList.toggle('filled',!!v); wrap.classList.toggle('empty',!v); }
+      recomputeTripReady();
+      syncTripFormChrome();
+    };
+    inp.onkeydown=e=>{ if(e.key==='Enter'){ e.preventDefault(); inp.blur(); } };
   });
-  const reqApproval=document.getElementById('requestApprovalBtn');
-  if(reqApproval) reqApproval.onclick=()=>{ S.travelApprovalRequested=true; render(); };
+
+  const bookTrip=document.getElementById('bookTripBtn');
+  if(bookTrip) bookTrip.onclick=()=>{
+    go(()=>{ S.empStep=2; applyTripToItinerary(); });
+    searchFlights(); // fire the Travel Agent (Kiwi.com MCP search) once the screen switches
+  };
+
+  // Keep the transcript scrolled to the latest message; focus the composer.
+  const chatWin=document.getElementById('chatWindow');
+  if(chatWin) chatWin.scrollTop=chatWin.scrollHeight;
+  if(input && !S.chatBusy) input.focus();
+
+  // Screen 2 — real flight results from the Travel Agent
+  document.querySelectorAll('[data-choose-flight]').forEach(b=>{
+    b.onclick=()=>{ S.chosenFlightId=b.dataset.chooseFlight; render(); };
+  });
+  const retry=document.getElementById('retrySearchBtn');
+  if(retry) retry.onclick=()=>searchFlights();
+  const book=document.getElementById('bookBtn');
+  if(book && !book.disabled) book.onclick=()=>{
+    S.activeTripId = 'trip_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); // this trip now has its own tracked report — see TRIPS
+    saveActiveTrip();
+    // Assemble the report AND parse the inbox in parallel, then run the real
+    // policy check once both have settled (so it evaluates final content, not
+    // placeholder data mid-assembly) — the trip-watch screen waits on this.
+    reportPromise = Promise.all([generateReport(), checkInbox()]).then(()=>evaluateReport());
+    go(()=>{ S.empStep=3; });
+  };
 
   // Screen 3 — review (appears after timer)
   const review=document.getElementById('reviewBtn');
   if(review) review.onclick=()=>go(()=>{ S.empStep=4; });
 
-  // Screen 4 — exception resolve
-  const rc=document.getElementById('resolveClient');
-  const rp=document.getElementById('resolvePersonal');
-  if(rc) rc.onclick=()=>resolveException();
-  if(rp) rp.onclick=()=>resolveException();
+  // Screen 4 — exception resolve. One card per real flagged item (see
+  // screenReport()), so this is a delegated handler rather than fixed ids.
+  document.querySelectorAll('[data-resolve-n]').forEach(b=>{
+    b.onclick=()=>resolveLineItem(Number(b.dataset.resolveN), b.dataset.resolveKind);
+  });
   const submit=document.getElementById('submitBtn');
-  if(submit && !submit.disabled) submit.onclick=()=>{ S.submitted=true; S.sentBack=false; render(); };
+  if(submit && !submit.disabled) submit.onclick=()=>{ S.submitted=true; S.sentBack=false; saveActiveTrip(); render(); };
 
-  // Screen 4 — snap a receipt (out-of-pocket, no card/email trail)
-  const snapBtn=document.getElementById('snapBtn');
-  if(snapBtn) snapBtn.onclick=()=>{
-    S.snapStep=1; render();
-    snapTimer=setTimeout(()=>{
-      S.snapStep=2; render();
-      snapTimer=setTimeout(()=>{ S.snapStep=3; render(); }, 1300);
-    }, 900);
+  // Screen 4 — snap a receipt: real photo -> Claude vision extraction
+  const snapFile=document.getElementById('snapFileInput');
+  if(snapFile) snapFile.onchange=()=>{
+    const file = snapFile.files && snapFile.files[0];
+    snapFile.value=''; // allow re-selecting the same file after an error
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload=()=>{
+      S.snapImage = reader.result;
+      S.snapStep=1; S.snapError=''; S.snapExtracted=null; S.snapAdded=false;
+      render();
+      extractReceipt(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
   const snapConfirm=document.getElementById('snapConfirmBtn');
   if(snapConfirm) snapConfirm.onclick=()=>{
+    const ex=S.snapExtracted;
+    if(!ex) return;
     LINE_ITEMS.push({
-      n:LINE_ITEMS.length+1, date:SNAP_CANDIDATE.date, merchant:SNAP_CANDIDATE.merchant,
-      sub:SNAP_CANDIDATE.sub, cat:SNAP_CANDIDATE.cat, gl:SNAP_CANDIDATE.gl,
-      amt:SNAP_CANDIDATE.amt, src:'snap', ok:true
+      n:LINE_ITEMS.length+1, date: ex.date || 'Today', merchant: ex.merchant || 'Receipt',
+      sub:'Snapped receipt', cat: ex.category || 'Other', gl: ex.gl || GL_CODES.Other,
+      amt: ex.amount || 0, src:'snap', live:true, evaluated:false, flag:null, resolved:false
     });
     TRIP.total = LINE_ITEMS.reduce((a,it)=>a+it.amt,0);
     S.snapAdded=true; S.snapStep=0;
     render();
+    evaluateReport(); // real policy check on the new item, same as everything else on the report
   };
   const snapCancel=document.getElementById('snapCancelBtn');
-  if(snapCancel) snapCancel.onclick=()=>{ S.snapStep=0; render(); };
+  if(snapCancel) snapCancel.onclick=()=>{ S.snapStep=0; S.snapImage=null; S.snapExtracted=null; S.snapError=''; render(); };
 
-  // Screen 5 — approve
+  // Screen 4 — refresh inbox for trip receipts (real IMAP scan, auto-adds
+  // matches) — the initial scan already ran at booking time (see bookBtn);
+  // this just re-checks for anything new, then policy-checks whatever it finds.
+  const checkInboxBtn=document.getElementById('checkInboxBtn');
+  if(checkInboxBtn) checkInboxBtn.onclick=()=>checkInbox().then(()=>evaluateReport());
+
+  // Screen 5 — manager re-checks the pending trip against POLICY.md (in case
+  // it was edited since this report was first evaluated).
+  const refreshAppr=document.getElementById('refreshApprovalBtn');
+  if(refreshAppr && !refreshAppr.disabled) refreshAppr.onclick=()=>refreshApproval();
+
+  // Screen 5 — approve. Acts on whichever trip is actually next in the
+  // approval queue (pendingApproval()), which may not be the trip currently
+  // open in the employee flow — if it is, re-sync the singleton from it.
   const approve=document.getElementById('approveBtn');
-  if(approve) approve.onclick=()=>{ S.approved=true; render(); };
+  if(approve) approve.onclick=()=>{
+    const p=pendingApproval();
+    if(!p) return;
+    p.approved=true;
+    S.mgrConfirm={kind:'approved', name:p.name, dates:p.dates};
+    if(p.id===S.activeTripId) loadTrip(p.id);
+    render();
+  };
   const sendback=document.getElementById('sendbackBtn');
-  if(sendback) sendback.onclick=()=>{ S.sentBack=true; S.submitted=false; S.exceptionResolved=false; render(); };
+  if(sendback) sendback.onclick=()=>{
+    const p=pendingApproval();
+    if(!p) return;
+    p.sentBack=true; p.submitted=false;
+    // Reopen every flagged item so the employee has to re-confirm each one —
+    // the manager didn't agree with how (some of) them were resolved.
+    p.lineItems.forEach(function(it){ if(it.flag) it.resolved=false; });
+    S.mgrConfirm={kind:'sentBack', name:p.name, dates:p.dates};
+    if(p.id===S.activeTripId) loadTrip(p.id);
+    render();
+  };
 
-  // Trip-watch timer
+  // Trip-watch timer — waits for the real /api/generate-report call (kicked
+  // off when the trip was booked) before revealing the finished report.
   if(S.role==='employee' && S.empStep===3){
     const slot=document.getElementById('notifSlot');
     const step=document.getElementById('assembleStep');
     watchTimer=setTimeout(()=>{
-      if(step){ step.classList.remove('pending'); step.classList.add('done');
-        step.querySelector('.wtick').innerHTML=svg('checkSm'); }
-      if(slot){ slot.innerHTML=notifCard();
-        const rb=document.getElementById('reviewBtn');
-        if(rb) rb.onclick=()=>go(()=>{ S.empStep=4; });
-      }
+      Promise.resolve(reportPromise).then(()=>{
+        if(step){ step.classList.remove('pending'); step.classList.add('done');
+          step.querySelector('.wtick').innerHTML=svg('checkSm'); }
+        if(slot){ slot.innerHTML=notifCard();
+          const rb=document.getElementById('reviewBtn');
+          if(rb) rb.onclick=()=>go(()=>{ S.empStep=4; });
+        }
+      });
     }, 2200);
   }
 }
 
-function sendMessage(text){
-  // Allow re-send when the user has navigated Back to chat (chatAdvanced).
-  if(S.chatSent && !S.chatAdvanced) return;
-  S.chatSent=true;
-  S.chatAdvanced=false;
-  S.chatText=text;
-  const win=document.getElementById('chatWindow');
-  win.innerHTML='';
-  // user bubble
-  const u=document.createElement('div');
-  u.className='bubble user';
-  u.innerHTML='<div class="avatar user">A</div><div class="bubble-body">'+text+'</div>';
-  win.appendChild(u);
-  // thinking
-  const t=document.createElement('div');
-  t.className='bubble agent';
-  t.innerHTML='<div class="avatar agent">'+svg('compass')+'</div><div class="bubble-body"><div class="thinking"><i></i><i></i><i></i></div></div>';
-  win.appendChild(t);
-  setTimeout(()=>go(()=>{ S.empStep=2; S.chatAdvanced=true; }), 1500);
+// ---------- Step 1: booking chat ----------
+// The system prompt and JSON schema live server-side (server.js) — the
+// client only ever sends the raw message history and gets back a parsed
+// {reply, trip, readyToBook} object. No intent classification: every
+// message just continues this one directed conversation.
+
+// The bot speaks first — this makes the flow directed from the very start.
+const GREETING = "Hi! I'm your travel booking assistant. I'll ask a few quick questions, then find your flights and hotel. To start — what city are you travelling to?";
+
+// Reset the chat to a fresh, bot-led conversation.
+function seedChat(){
+  S.chatMessages = [{ who:'agent', text:GREETING }];
+  S.chatHistory  = [];
+  S.trip = {};
+  S.tripReady = false;
+  S.chatBusy = false;
+  S.chatError = '';
+  S.formEditsPending = new Set();
+  S.flightStatus='idle'; S.flights=[]; S.hotel=null; S.flightNote=''; S.flightError=''; S.chosenFlightId=null;
 }
 
-function resolveException(){
-  S.exceptionResolved=true;
+// Trip is "ready" once every required field is known — whether Claude filled
+// it in from chat or the traveler typed it directly into the form.
+function recomputeTripReady(){
+  S.tripReady = TRIP_FIELDS.filter(f=>f.req).every(f=>!!S.trip[f.k]);
+}
+
+// Live-update the form's chrome (count / book button) without a full render,
+// so typing in a field doesn't steal its own focus.
+function syncTripFormChrome(){
+  const reqFields = TRIP_FIELDS.filter(f=>f.req);
+  const filled = reqFields.filter(f=>S.trip[f.k]).length;
+  const count=document.getElementById('tfCount');
+  if(count) count.textContent = Math.min(filled,reqFields.length)+'/'+reqFields.length+' captured';
+  const book=document.getElementById('bookTripBtn');
+  if(book) book.disabled = !S.tripReady;
+  const label=document.getElementById('tfBookLabel');
+  if(label) label.textContent = S.tripReady ? 'Find flights & hotel' : 'Answer the questions above to continue';
+}
+
+async function callClaude(){
+  const res = await fetch('/api/chat', {
+    method:'POST',
+    headers:{ 'content-type':'application/json' },
+    body: JSON.stringify({ messages:S.chatHistory })
+  });
+  if(!res.ok){
+    let detail=''; try{ const j=await res.json(); detail=(j.error && (j.error.message||j.error))||JSON.stringify(j); }catch(e){ detail=await res.text(); }
+    throw new Error('Server '+res.status+' — '+detail+'. Is `node server.js` running with ANTHROPIC_API_KEY set?');
+  }
+  return res.json(); // server returns {reply, trip, readyToBook} directly
+}
+
+async function sendMessage(text){
+  if(S.chatBusy) return;
+  text=(text||'').trim();
+  if(!text) return;
+  S.chatError='';
+  S.chatMessages.push({who:'user', text});
+  // Let Claude know about any fields the traveler typed directly into the
+  // form since the last message, so it doesn't re-ask for them.
+  let outgoing = text;
+  if(S.formEditsPending.size){
+    const editedFields = TRIP_FIELDS.filter(f=>S.formEditsPending.has(f.k) && S.trip[f.k]);
+    if(editedFields.length){
+      outgoing += '\n\n[Trip form updated directly by the traveler: '
+        + editedFields.map(f=>f.label+'='+S.trip[f.k]).join(', ') + ']';
+    }
+    S.formEditsPending.clear();
+  }
+  S.chatHistory.push({role:'user', content:outgoing});
+  S.chatBusy=true; S.chatSent=true;
+  render();
+  try{
+    const out = await callClaude();
+    S.chatHistory.push({role:'assistant', content:JSON.stringify(out)});
+    const t = out.trip || {};
+    // merge — keep previously-known values if the model returns null for them
+    ['origin','destination','departDate','returnDate','purpose','travelers'].forEach(k=>{
+      if(t[k]) S.trip[k]=t[k];
+    });
+    S.chatMessages.push({who:'agent', text: out.reply || '…'});
+    recomputeTripReady();
+  }catch(e){
+    S.chatMessages.push({who:'agent', text:'⚠️ '+e.message});
+  }finally{
+    S.chatBusy=false;
+    render();
+  }
+}
+
+// Carry the parsed trip into the downstream (trip-watch / report) copy for continuity.
+function applyTripToItinerary(){
+  const t=S.trip;
+  if(t.destination) TRIP.name = t.destination + ' · ' + (t.purpose || 'Business trip');
+  if(t.departDate && t.returnDate) TRIP.dates = t.departDate + ' – ' + t.returnDate;
+  else if(t.departDate) TRIP.dates = t.departDate;
+}
+
+// ---------- Step 2: the Travel Agent — real flight search via Kiwi.com MCP ----------
+async function searchFlights(){
+  S.flightStatus='loading'; S.flightError=''; S.chosenFlightId=null;
+  render();
+  try{
+    const res = await fetch('/api/search-flights', {
+      method:'POST',
+      headers:{ 'content-type':'application/json' },
+      body: JSON.stringify({
+        origin: S.trip.origin,
+        destination: S.trip.destination,
+        departDate: S.trip.departDate,
+        returnDate: S.trip.returnDate,
+        travelers: S.trip.travelers
+      })
+    });
+    if(!res.ok){
+      let detail=''; try{ const j=await res.json(); detail=(j.error && (j.error.message||j.error))||JSON.stringify(j); }catch(e){ detail=await res.text(); }
+      throw new Error('Server '+res.status+' — '+detail);
+    }
+    const data = await res.json();
+    S.flights = data.flights || [];
+    S.hotel = data.hotel || null;
+    S.flightNote = data.note || '';
+    S.flightStatus='done';
+  }catch(e){
+    S.flightError = e.message;
+    S.flightStatus='error';
+  }
+  render();
+}
+
+const GL_CODES = {Airfare:'6010', Lodging:'6020', 'Ground transport':'6030', Meals:'6040', Other:'6050'};
+
+// ---------- Step 3: Expense Agent — assemble the report from the real booking ----------
+// Kicked off once when the trip is booked (see the bookBtn handler in wire()).
+// Amounts always come from the real flight/hotel data, never from the model —
+// only merchant text, subtitle and categorization are Claude's job.
+async function generateReport(){
+  const flight = S.flights.find(f=>f.id===S.chosenFlightId);
+  const hotel = S.hotel;
+  if(!flight || !hotel) return;
+  const nights = hotel.nights || 1;
+  const hotelTotal = Math.round(hotel.rate*nights*100)/100;
+  const date = S.trip.departDate || LINE_ITEMS[0].date;
+  try{
+    const res = await fetch('/api/generate-report', {
+      method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({ flight, hotel, trip:S.trip })
+    });
+    if(!res.ok) throw new Error('Server '+res.status);
+    const data = await res.json();
+    const items = data.items;
+    if(!Array.isArray(items) || items.length!==2) throw new Error('unexpected report shape');
+    Object.assign(LINE_ITEMS[0], { merchant:items[0].merchant, sub:items[0].sub, cat:items[0].category, gl:items[0].gl, amt:items[0].amt, date, live:true });
+    Object.assign(LINE_ITEMS[1], { merchant:items[1].merchant, sub:items[1].sub, cat:items[1].category, gl:items[1].gl, amt:items[1].amt, date, live:true });
+  }catch(e){
+    // Fall back to a deterministic (non-LLM) assembly so the report still
+    // reflects the real trip even if the Expense Agent call fails. Still
+    // "live" — the numbers are the real booking, just not Claude-formatted.
+    console.warn('generate-report fell back to local assembly:', e.message);
+    Object.assign(LINE_ITEMS[0], {
+      merchant:(flight.airline||'Airline')+' '+(flight.flight_number||''),
+      sub:(S.trip.origin||'?')+' → '+(S.trip.destination||'?'),
+      cat:'Airfare', gl:GL_CODES.Airfare, amt:flight.price, date, live:true
+    });
+    Object.assign(LINE_ITEMS[1], {
+      merchant:hotel.name,
+      sub:nights+' night'+(nights>1?'s':'')+(hotel.area?' · '+hotel.area:''),
+      cat:'Lodging', gl:GL_CODES.Lodging, amt:hotelTotal, date, live:true
+    });
+  }
+  TRIP.total = LINE_ITEMS.reduce((a,it)=>a+it.amt,0);
+}
+
+// ---------- Step 3a-2: Approver Assist — real policy check (/api/evaluate-report) ----------
+// Only evaluates items that haven't been judged yet (it.evaluated===false), so
+// this can be called again whenever new items show up (a snapped receipt, an
+// inbox match) without re-litigating something the traveler already resolved.
+// Amounts/categories are never touched here — only flag/reason and the
+// manager-facing summary are the model's job.
+async function evaluateReport(){
+  const toEvaluate = LINE_ITEMS.filter(it => !it.evaluated);
+  if(!toEvaluate.length) return;
+  S.evaluating = true;
+  render();
+  try{
+    const res = await fetch('/api/evaluate-report', {
+      method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({
+        destination: S.trip.destination, dates: TRIP.dates,
+        items: toEvaluate.map(it => ({ n:it.n, merchant:it.merchant, sub:it.sub, cat:it.cat, amt:it.amt }))
+      })
+    });
+    const data = await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(data.error || ('Server '+res.status));
+    (data.items||[]).forEach(function(r){
+      const it = LINE_ITEMS.find(x => x.n===r.n);
+      if(it){ it.flag = r.flagged ? r.reason : null; it.evaluated = true; }
+    });
+    if(data.summary) S.approvalSummary = data.summary;
+    if(data.recommendation) S.approvalRecommendation = data.recommendation;
+  }catch(e){
+    // Fall back to whatever flag each item already shipped with (only the
+    // scripted dinner has one) rather than blocking the report entirely.
+    console.warn('evaluate-report failed, using fallback flags:', e.message);
+    toEvaluate.forEach(it => { it.evaluated = true; });
+    if(!S.approvalSummary) S.approvalSummary = 'Policy check unavailable right now — showing the one flagged item this demo ships with by default.';
+  }
+  S.evaluating = false;
+  saveActiveTrip();
+  render();
+}
+
+// ---------- Manager: re-check the pending trip against POLICY.md right now ----------
+// POLICY.md is read fresh on every /api/evaluate-report call (see server.js),
+// so editing it takes effect immediately — this button just re-runs the check
+// on demand for whichever trip the manager is looking at, in case the policy
+// changed after that trip was first evaluated. Re-evaluates every item (not
+// just unevaluated ones), since a policy edit can change the verdict on an
+// item that was already fine.
+async function refreshApproval(){
+  const p0 = pendingApproval();
+  if(!p0 || S.mgrRefreshing) return;
+  const tripId = p0.id;
+  S.mgrRefreshing = true; S.mgrRefreshError='';
+  render();
+  try{
+    const res = await fetch('/api/evaluate-report', {
+      method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({
+        destination: p0.name, dates: p0.dates,
+        items: p0.lineItems.map(it => ({ n:it.n, merchant:it.merchant, sub:it.sub, cat:it.cat, amt:it.amt }))
+      })
+    });
+    const data = await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(data.error || ('Server '+res.status));
+    // Re-acquire the trip from TRIPS now — the render() above may have run
+    // saveActiveTrip(), which replaces (not mutates) TRIPS[i], detaching any
+    // reference captured before this await.
+    const p = TRIPS.find(t => t.id === tripId);
+    if(p){
+      (data.items||[]).forEach(function(r){
+        const it = p.lineItems.find(x => x.n===r.n);
+        if(it){ it.flag = r.flagged ? r.reason : null; it.evaluated = true; }
+      });
+      if(data.summary) p.approvalSummary = data.summary;
+      if(data.recommendation) p.approvalRecommendation = data.recommendation;
+      // If this is also the trip currently open in the employee flow, pull the
+      // fresh flags back into the live LINE_ITEMS/S copy.
+      if(p.id===S.activeTripId) loadTrip(p.id);
+    }
+  }catch(e){
+    S.mgrRefreshError = e.message || 'Policy re-check failed.';
+  }
+  S.mgrRefreshing = false;
+  render();
+}
+
+// ---------- Step 3b: Expense Agent — real receipt photo extraction (Claude vision) ----------
+async function extractReceipt(dataUrl){
+  const m = dataUrl.match(/^data:([^;]+);base64,(.*)$/s);
+  if(!m){ S.snapError='Could not read that file.'; S.snapStep=2; render(); return; }
+  try{
+    const res = await fetch('/api/extract-receipt', {
+      method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({ image:m[2], mediaType:m[1] })
+    });
+    if(!res.ok){
+      let detail=''; try{ const j=await res.json(); detail=(j.error && (j.error.message||j.error))||JSON.stringify(j); }catch(e){ detail=await res.text(); }
+      throw new Error(detail);
+    }
+    const data = await res.json();
+    if(!data.confident || data.amount==null || !data.merchant){
+      S.snapError = data.note || "Couldn't make out the merchant or amount — try a clearer photo.";
+      S.snapStep=2;
+    }else{
+      S.snapExtracted = data;
+      S.snapStep=3;
+    }
+  }catch(e){
+    S.snapError = e.message || 'Receipt extraction failed.';
+    S.snapStep=2;
+  }
+  render();
+}
+
+// ---------- Step 3c: Expense Agent — scan a real Gmail inbox for receipts ----------
+// Runs automatically once the trip is booked (see bookBtn in wire()) and
+// again on demand via the Refresh button. A match (subject line == trip
+// destination, judged a real receipt) is added straight to the report, same
+// as a corporate-card charge — the subject line is already an explicit,
+// deliberate signal from the traveler, so no separate confirm step.
+async function checkInbox(){
+  if(S.inboxChecking || !S.trip.destination) return;
+  S.inboxChecking=true; S.inboxError='';
+  render();
+  try{
+    const res = await fetch('/api/check-inbox', {
+      method:'POST', headers:{'content-type':'application/json'},
+      body: JSON.stringify({
+        destination:S.trip.destination,
+        resetSeen: !S.inboxChecked // fresh trip -> let previously-judged emails be reconsidered
+      })
+    });
+    const data = await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(data.error || ('Server '+res.status));
+    const added=[];
+    (data.suggestions||[]).forEach(function(sg){
+      const it = {
+        n:LINE_ITEMS.length+1, date: sg.date || 'Today', merchant: sg.merchant,
+        sub:'From inbox — “'+sg.subject+'”', cat: sg.category || 'Other', gl: sg.gl || GL_CODES.Other,
+        amt: sg.amount, src:'email', live:true, evaluated:false, flag:null, resolved:false
+      };
+      LINE_ITEMS.push(it);
+      added.push(it);
+    });
+    if(added.length) TRIP.total = LINE_ITEMS.reduce((a,it)=>a+it.amt,0);
+    S.inboxLastAdded = added;
+    S.inboxScanned = data.scanned || 0;
+    S.inboxChecked = true;
+  }catch(e){
+    S.inboxError = e.message || 'Inbox check failed.';
+  }finally{
+    S.inboxChecking=false;
+    render();
+  }
+}
+
+// Resolves ONE flagged line item (n), not the whole report — a report can
+// have several real exceptions now, each resolved independently.
+function resolveLineItem(n, kind){
+  const i = LINE_ITEMS.findIndex(it=>it.n===n);
+  if(i<0) return;
+  if(kind==='personal'){
+    // Actually remove it — a personal expense doesn't belong on the report at all.
+    LINE_ITEMS.splice(i,1);
+    TRIP.total = LINE_ITEMS.reduce((a,it)=>a+it.amt,0);
+  } else {
+    const it = LINE_ITEMS[i];
+    it.resolved = true;
+    // The classic case (an over-limit meal) recodes to Client entertainment,
+    // matching the attendees the employee just confirmed. Anything else
+    // (lodging, ground transport, etc.) just gets kept as-is, approved.
+    if(it.cat==='Meals'){ it.cat='Client entertainment'; it.gl='6045'; }
+  }
   render();
 }
 
 function newTripReset(){
-  // Before resetting, ARCHIVE the current trip into the Expense Agent's
-  // "Already handled" history so it doesn't vanish when a new trip is booked.
-  // Only archive if the trip actually reached the report stage (empStep 4).
-  if(S.empStep===4){
-    const status = S.approved ? 'Approved'
-                 : S.sentBack ? 'Sent back'
-                 : S.submitted ? 'Awaiting approval'
-                 : 'Draft';
-    // Prepend so the most-recent handled trip shows first.
-    PAST_REPORTS.unshift({ name:TRIP.name, dates:TRIP.dates, total:TRIP.total, status:status });
+  // Persist whatever trip is being left — up to 3 tracked at once, each with
+  // its own full report, so starting another trip never makes one vanish.
+  saveActiveTrip();
+  if(!makeRoomForNewTrip()){
+    S.tripCapNotice=true;
+    render();
+    return;
   }
   // Reset the employee travel+expense journey back to a fresh chat so the user
   // can book another trip. Keeps role=employee; does NOT touch manager/finance.
   S.role='employee'; S.empStep=1; S.view='main';
   S.chatSent=false; S.chatAdvanced=false; S.chatText='';
-  S.exceptionResolved=false; S.submitted=false; S.approved=false; S.apprCleared=false; S.sentBack=false;
-  S.expPreview=false; S.snapStep=0; S.snapAdded=false; S.travelApprovalRequested=false;
-  LINE_ITEMS.length=ORIGINAL_ITEM_COUNT; TRIP.total=ORIGINAL_TOTAL;
+  seedChat();
+  S.evaluating=false; S.approvalSummary=''; S.approvalRecommendation=null; S.submitted=false; S.approved=false; S.sentBack=false;
+  S.mgrRefreshing=false; S.mgrRefreshError='';
+  S.activeTripId=null;
+  S.expPreview=false; S.snapStep=0; S.snapImage=null; S.snapExtracted=null; S.snapError='';
+  S.snapAdded=false; S.travelApprovalRequested=false;
+  S.inboxChecking=false; S.inboxChecked=false; S.inboxScanned=0; S.inboxLastAdded=[]; S.inboxError='';
+  reportPromise=null;
+  resetLineItems();
   NAV_HISTORY.length=0;
   render();
 }
 
 function restart(){
+  TRIPS.length=0; S.activeTripId=null; S.mgrConfirm=null; S.tripCapNotice=false;
   S.role='employee'; S.empStep=1; S.chatSent=false; S.chatText='';
-  S.exceptionResolved=false; S.submitted=false; S.approved=false; S.apprCleared=false; S.sentBack=false;
+  S.evaluating=false; S.approvalSummary=''; S.approvalRecommendation=null; S.submitted=false; S.approved=false; S.sentBack=false;
+  S.mgrRefreshing=false; S.mgrRefreshError='';
   S.tipsSeen={}; S.activeTip=null; // re-arm one-time tips (they show again only if the toggle is ON)
   S.view='main'; S.expPreview=false; S.mgrView='approvals'; S.finView='orgspend';
-  S.snapStep=0; S.snapAdded=false; S.travelApprovalRequested=false;
-  LINE_ITEMS.length=ORIGINAL_ITEM_COUNT; TRIP.total=ORIGINAL_TOTAL;
+  S.snapStep=0; S.snapImage=null; S.snapExtracted=null; S.snapError='';
+  S.snapAdded=false; S.travelApprovalRequested=false;
+  S.inboxChecking=false; S.inboxChecked=false; S.inboxScanned=0; S.inboxLastAdded=[]; S.inboxError='';
+  reportPromise=null;
+  resetLineItems();
   S.chatAdvanced=false;
+  seedChat();
   PAST_REPORTS.length=0; ORIGINAL_PAST_REPORTS.forEach(r=>PAST_REPORTS.push(JSON.parse(JSON.stringify(r))));
   BUDGET_REQUESTS[0].status='pending'; BUDGET_REQUESTS[1].status='pending'; BUDGET_REQUESTS[2].status='approved';
   NAV_HISTORY.length=0;
@@ -2064,6 +2848,7 @@ function goToStage(key){
 }
 
 // init
+seedChat();   // bot greets first so the flow is directed from the start
 render();
 </script>
 

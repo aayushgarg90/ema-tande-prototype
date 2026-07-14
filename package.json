@@ -1,0 +1,18 @@
+{
+  "name": "ema-tande-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ema Travel & Expense Agent prototype — chat-driven trip booking with real Kiwi.com flight search via MCP.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "imapflow": "^1.4.7",
+    "mailparser": "^3.9.14"
+  }
+}
